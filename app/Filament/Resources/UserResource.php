@@ -32,6 +32,8 @@ class UserResource extends Resource
                 /**Select::make('name')->options([
                     'test' => 'test as name',
                     'youtube' => 'youtube as name'
+
+                    test
                 ])**/
             ]);
     }
