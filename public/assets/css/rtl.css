@@ -1,0 +1,1228 @@
+.submenu-left-content {
+  text-align: right;
+}
+.submenu-left-content ul li {
+  padding-left: 0;
+  padding-right: 28px;
+}
+.submenu-left-content ul li img {
+  left: auto;
+  right: 0;
+}
+.submenu-left-content ul li:last-child {
+  margin-right: 25px;
+}
+.submenu-left-content ul li:first-child {
+  margin-right: 0;
+}
+
+.submenu-right-content {
+  text-align: left;
+}
+.submenu-right-content ul li {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.main-nav nav {
+  padding-top: 0;
+}
+.main-nav nav .navbar-nav .nav-item {
+  margin-right: 0;
+  margin-left: 45px;
+}
+.main-nav nav .navbar-nav .nav-item:last-child {
+  margin-left: 0;
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu .nav-item {
+  margin-left: 0;
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link::before {
+  left: auto;
+  right: 22px;
+  transform: translateY(-50%) rotate(178deg);
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link.active {
+  color: var(--mainColor);
+  padding-right: 38px;
+  padding-left: 0;
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  padding-left: 0;
+  padding-right: 38px;
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-toggle::after {
+  right: auto;
+  left: 25px;
+}
+.main-nav nav .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu {
+  left: auto;
+  right: -100%;
+}
+.main-nav .others-option-vg .option-item .search-form {
+  margin-right: 0;
+  margin-left: 25px;
+}
+.main-nav .others-option-vg .option-item .search-form .search-button {
+  right: auto;
+  left: 0;
+}
+
+.section-title.left-title {
+  text-align: right;
+}
+
+.hero-slider-item .hero-shape-4 {
+  right: auto;
+  left: 0;
+}
+.hero-slider-item .hero-shape-3 {
+  left: auto;
+  right: 5%;
+}
+.hero-slider-item .hero-shape-2 {
+  right: auto;
+  left: 10.5%;
+}
+.hero-slider-item.bg-img-1 .hero-shape-5 {
+  left: auto;
+  right: 0;
+}
+.hero-slider-item.bg-img-1 .hero-content {
+  margin-left: unset;
+  margin-right: auto;
+}
+.hero-slider-item.bg-img-1 .hero-content .hero-bottom .default-btn.btn-style-one {
+  margin-left: 0;
+  margin-right: 25px;
+}
+.hero-slider-item .hero-content .hero-bottom .default-btn.btn-style-one {
+  margin-left: 0;
+  margin-right: 25px;
+}
+
+.single-conference-img {
+  padding-right: 0;
+  margin-left: 20px;
+}
+
+.single-conference-content .conference-item {
+  padding-left: 0;
+  padding-right: 89px;
+}
+.single-conference-content .conference-item .conference-icon {
+  left: auto;
+  right: 0;
+}
+
+.conference-planning-area .col-lg-4:nth-child(1) .single-conference-card {
+  margin-right: 0;
+  margin-left: 30px;
+}
+.conference-planning-area .col-lg-4:nth-child(2) .single-conference-card {
+  margin-right: 0;
+  margin-left: 25px;
+  left: 0;
+  right: 25px;
+}
+.conference-planning-area .col-lg-4:nth-child(3) .single-conference-card {
+  margin-left: 0;
+  margin-right: 50px;
+}
+
+.single-conference-card::after {
+  right: auto;
+  left: -58px;
+}
+.single-conference-card .planning-icon {
+  left: auto;
+  right: 35px;
+}
+
+.conference-schedules-content .single-schedules-item .schedules-images {
+  margin-right: 0;
+  margin-left: 28px;
+}
+.conference-schedules-content .single-schedules-item .schedules-text .client-item {
+  padding-left: 0;
+  padding-right: 65px;
+}
+.conference-schedules-content .single-schedules-item .schedules-text .client-item img {
+  left: auto;
+  right: 0;
+}
+.conference-schedules-content .single-schedules-item .schedules-text span img {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.conference-schedules-content .conference-schedules-shape {
+  right: auto;
+  left: 0;
+}
+.conference-schedules-content .schedules-design-content {
+  padding-right: 0;
+  padding-left: 20px;
+}
+
+.team-card .team-list {
+  right: auto;
+  left: 30px;
+}
+
+.upcoming-list .live-auctions-countdown li {
+  margin-right: 0;
+  margin-left: 30px;
+}
+.upcoming-list .live-auctions-countdown li:last-child {
+  margin-left: 0;
+}
+
+.upcoming-area .upcoming-shape-1 {
+  left: auto;
+  right: 0;
+}
+.upcoming-area .upcoming-shape-2 {
+  right: auto;
+  left: 0;
+}
+
+.why-the-conference-image {
+  margin-right: 0;
+  margin-left: 50px;
+}
+.why-the-conference-image .why-the-conference-img-2 {
+  left: auto;
+  right: -18px;
+}
+.why-the-conference-image .why-the-conference-img-3 {
+  right: auto;
+  left: 0;
+}
+
+.why-the-conference-content ul li {
+  padding-left: 0;
+  padding-right: 40px;
+}
+.why-the-conference-content ul li img {
+  left: auto;
+  right: 0;
+}
+
+.testimonials-card .testimonials-icon {
+  right: auto;
+  left: 35px;
+}
+.testimonials-card .testimonials-cliend {
+  padding-left: 0;
+  padding-right: 75px;
+}
+.testimonials-card .testimonials-cliend img {
+  left: auto;
+  right: 0;
+}
+
+.blog-right-hover-content {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+.blog-hover-content {
+  margin-left: 0;
+  margin-right: -24px;
+}
+
+.blog-image img {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.form-control {
+  text-align: right;
+}
+
+.location-conference-form .form-group .select-icon i {
+  right: auto;
+  left: 25px;
+}
+
+.footer-widget.footer-widget-link {
+  padding-left: 0;
+  padding-right: 38px;
+}
+.footer-widget.footer-widget-link2 {
+  left: 0;
+  right: -38px;
+}
+
+.footer-instagram {
+  left: 0;
+  right: -65px;
+}
+
+.footer-subscribe {
+  margin-left: 0;
+  margin-right: -10px;
+}
+
+.blog-area .blog-shape {
+  left: auto;
+  right: 10.5%;
+}
+
+.go-top.active {
+  right: auto;
+  left: 2%;
+}
+
+.join-conference-image .join-conference-image-two {
+  right: auto;
+  left: 15px;
+}
+.join-conference-image .conference-experience {
+  right: auto;
+  left: 38px;
+}
+
+.join-conference-content .join-conference-card {
+  padding-left: 0;
+  padding-right: 90px;
+}
+.join-conference-content .join-conference-card .join-sponsor-icon {
+  left: auto;
+  right: 0;
+}
+.join-conference-content .join-conference-item img {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.team-card.team-card-two .team-images.bg-border-team-img13 {
+  border-radius: 10px 0px 0px 10px;
+}
+.team-card.team-card-two .team-images.bg-border-team-img13 img {
+  border-radius: 10px 0px 0px 10px;
+}
+.team-card.team-card-two .team-images.bg-border-team-img {
+  border-radius: 0px 10px 10px 0px;
+}
+.team-card.team-card-two .team-images.bg-border-team-img img {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.schedules-style-two-tabs .nav.nav-pills .nav-item {
+  margin-right: 0;
+  margin-left: 25px;
+}
+.schedules-style-two-tabs .nav.nav-pills .nav-item:last-child {
+  margin-left: 0;
+}
+
+.schedules-style-two-content .schedules-style-list ul li {
+  padding-left: 0;
+  padding-right: 30px;
+}
+.schedules-style-two-content .schedules-style-list ul li img {
+  left: auto;
+  right: 0;
+}
+.schedules-style-two-content .digital-schedules-item {
+  left: 0;
+  right: -50px;
+}
+.schedules-style-two-content .digital-schedules-item .schedules-client {
+  padding-left: 0;
+  padding-right: 70px;
+}
+.schedules-style-two-content .digital-schedules-item .schedules-client img {
+  left: auto;
+  right: 0;
+}
+.schedules-style-two-content .digital-schedules-item .client-speakers {
+  padding-left: 0;
+  padding-right: 115px;
+}
+.schedules-style-two-content .digital-schedules-item .client-speakers img {
+  left: auto;
+  right: 0;
+}
+.schedules-style-two-content .digital-schedules-item .client-speakers .client-bg-img-two {
+  left: auto;
+  right: 55px;
+}
+
+.why-the-conference-content.conference-style-two-content {
+  margin-left: 0;
+  margin-right: -140px;
+}
+
+.single-blog-style-two-card .blog-style-two-content .date {
+  left: 30px;
+  margin-left: unset;
+  margin-right: auto;
+}
+.single-blog-style-two-card .blog-style-two-content ul li {
+  margin-right: 0;
+  margin-left: 30px;
+  padding-left: 0;
+  padding-right: 30px;
+}
+.single-blog-style-two-card .blog-style-two-content ul li img {
+  left: auto;
+  right: 0;
+}
+.single-blog-style-two-card .blog-style-two-content ul li:first-child {
+  padding-right: 0;
+}
+.single-blog-style-two-card .blog-style-two-content ul li:last-child {
+  margin-left: 0;
+}
+
+.subscribed-form .newsletter-form {
+  margin-left: unset;
+  margin-right: auto;
+}
+.subscribed-form .newsletter-form .default-btn {
+  right: auto;
+  left: 5.5px;
+}
+
+.footer-area.footer-style-two .footer-widget.services-widget {
+  padding-left: 0;
+  padding-right: 90px;
+}
+.footer-area.footer-style-two .footer-widget.footer-widget-link {
+  padding-left: 0;
+  padding-right: 60px;
+}
+.footer-area.footer-style-two .footer-widget.footer-widget-link2 {
+  left: 0;
+  right: 0;
+}
+.footer-area.footer-style-two .footer-instagram {
+  right: auto;
+}
+
+.single-banner-three-content .banner-input-fill .form-group::after {
+  right: auto;
+  left: 0;
+}
+.single-banner-three-content .banner-input-fill .form-group .banner-select img {
+  right: auto;
+  left: 50px;
+}
+
+.single-category-card {
+  margin-left: 0;
+  margin-right: 50px;
+  padding: 45px 70px 45px 17px;
+}
+.single-category-card .category-img {
+  left: auto;
+  right: -50px;
+}
+
+.conference-style-three-img {
+  text-align: left;
+}
+.conference-style-three-img .conference-style-3 {
+  left: auto;
+  right: 20px;
+}
+
+.schedules-style-3-tabs .nav.nav-pills .nav-item {
+  margin-right: 0;
+  margin-left: 25px;
+}
+.schedules-style-3-tabs .nav.nav-pills .nav-item:last-child {
+  margin-left: 0;
+}
+
+.schedules-style-three-content .schedules-style-list ul li {
+  padding-left: 0;
+  padding-right: 30px;
+}
+.schedules-style-three-content .schedules-style-list ul li img {
+  left: auto;
+  right: 0;
+}
+.schedules-style-three-content .schedules-speakers-img ul li {
+  margin-left: 0;
+  margin-right: -15px;
+}
+.schedules-style-three-content .schedules-speakers-img .speakers-text {
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+.single-faqs-content {
+  padding-left: 0;
+  padding-right: 15px;
+}
+.single-faqs-content .accordion .accordion-item .accordion-header .accordion-button::after {
+  right: auto;
+  left: -10px;
+}
+
+.faqs-img {
+  padding-right: 0;
+  padding-right: 15px;
+}
+
+.blog-style-three-area .container-fluid {
+  right: calc((100% - 1320px) / 2);
+}
+
+.blog-style-three-slider.owl-theme .owl-nav {
+  left: auto;
+  right: -34%;
+}
+
+.single-blog-style-three-card .blog-style-two-content ul li {
+  padding-left: 0;
+  padding-right: 30px;
+  margin-right: 0;
+  margin-left: 30px;
+}
+.single-blog-style-three-card .blog-style-two-content ul li img {
+  left: auto;
+  right: 0;
+}
+.single-blog-style-three-card .blog-style-two-content ul li:last-child {
+  margin-left: 0;
+}
+
+.single-page-banner-content ul li {
+  margin-right: 0;
+  margin-left: 15px;
+}
+.single-page-banner-content ul li::after {
+  right: auto;
+  left: -10px;
+}
+
+.single-events-item .events-content {
+  padding: 0px 8px 0px 30px;
+}
+.single-events-item .events-content ul {
+  margin-left: 0;
+  margin-right: -95px;
+}
+.single-events-item .events-content ul li {
+  margin-right: 0;
+  margin-left: 25px;
+}
+.single-events-item .events-content ul li:last-child {
+  margin-left: 0;
+}
+.single-events-item .events-image {
+  border-radius: 0px 10px 10px 0px;
+}
+.single-events-item .events-image img {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.event-information-card h2::after {
+  left: auto;
+  right: 0;
+}
+.event-information-card ul li span {
+  right: auto;
+  left: 0;
+}
+.event-information-card ul li p .off {
+  right: auto;
+  left: 0;
+}
+.event-information-card ul li p del {
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+.single-event-details-content .event-details-card {
+  padding: 35px 120px 35px 35px;
+}
+.single-event-details-content .event-details-card img {
+  left: auto;
+  right: 35px;
+}
+.single-event-details-content .event-details-list li {
+  padding-left: 0;
+  padding-right: 35px;
+}
+.single-event-details-content .event-details-list li img {
+  left: auto;
+  right: 0;
+}
+
+.event-gallery-img .gallery-icon {
+  right: auto;
+  left: 30px;
+}
+
+.single-hall-view-card .hall-text {
+  left: auto;
+  right: 30px;
+}
+
+.sponsors-countdown .sponsors-bottom .default-btn.btn-style-one {
+  margin-right: 0;
+  margin-left: 25px;
+}
+
+.my-account-content .text-account {
+  float: left;
+}
+.my-account-content h2::after {
+  left: auto;
+  right: 0;
+}
+
+.blog-post-right-bar {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.blog-post-search .search-form .default-btn {
+  right: auto;
+  left: 0;
+}
+
+.recent-posts-card h2::after {
+  left: auto;
+  right: 0;
+}
+.recent-posts-card .recent-posts-item .recent-text {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.blog-post-category h2::after {
+  left: auto;
+  right: 0;
+}
+
+.popular-tags h2::after {
+  left: auto;
+  right: 0;
+}
+
+.blog-post-card .blog-post-text ul li {
+  margin-right: 0;
+  margin-left: 15px;
+  padding-left: 0;
+  padding-right: 28px;
+}
+.blog-post-card .blog-post-text ul li img {
+  left: auto;
+  right: 0;
+}
+.blog-post-card .blog-post-text ul li:first-child {
+  padding-right: 0;
+}
+.blog-post-card .blog-post-text ul li:last-child {
+  margin-left: 0;
+}
+
+.single-blog-details-content .blog-details-list li {
+  padding-left: 0;
+  padding-right: 30px;
+  margin-right: 0;
+  margin-left: 30px;
+}
+.single-blog-details-content .blog-details-list li img {
+  left: auto;
+  right: 0;
+}
+.single-blog-details-content .blog-details-list li:last-child {
+  margin-left: 0;
+}
+
+.single-blog-details-content .event-details-card {
+  padding: 50px 130px 50px 50px;
+}
+.single-blog-details-content .event-details-card img {
+  left: auto;
+  right: 35px;
+}
+
+.single-blog-details-content .d-flex .popular-tags ul li {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.single-blog-details-content .d-flex .popular-tags ul li:last-child {
+  margin-left: 0;
+}
+.single-blog-details-content .d-flex .popular-tags ul li:first-child {
+  margin-left: 0;
+}
+.single-blog-details-content .d-flex .popular-tags ul li span {
+  margin-right: 0;
+  margin-left: 23px;
+}
+.single-blog-details-content .d-flex .blog-sewile-list ul li {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.single-blog-details-content .d-flex .blog-sewile-list ul li span {
+  margin-right: 0;
+  margin-left: 20px;
+}
+.single-blog-details-content .blog-details-comment .comment-text .client-name {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.single-contact-card .contact-box {
+  padding-left: 0;
+  padding-right: 30px;
+}
+.single-contact-card .contact-box img {
+  left: auto;
+  right: 0;
+}
+
+.single-contact-card .contact-list ul li {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.single-contact-card .contact-list ul li:last-child {
+  margin-left: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .mean-container .mean-nav ul li a.mean-expand {
+    text-align: left;
+    right: auto;
+    left: 0;
+  }
+  .mean-container .mean-nav ul li a {
+    text-align: right;
+  }
+  .others-option-for-responsive .dot-menu {
+    right: auto;
+    left: 55px;
+  }
+  .mobile-nav .logo {
+    right: 0;
+    left: auto;
+  }
+  .mean-container a.meanmenu-reveal {
+    padding: 12px 0 0 0;
+    color: #3D8BC1;
+    top: -32px;
+    right: auto !important;
+    left: 0 !important;
+  }
+  .navbar-nav {
+    max-height: 40vh;
+  }
+  .others-option-for-responsive .others-option .option-item .search-button {
+    right: auto;
+    left: 20px;
+  }
+  .hero-slider-item.bg-img-1 .hero-content p {
+    font-size: 11px;
+  }
+  .hero-slider-item.bg-img-1 .hero-content .hero-bottom .default-btn.btn-style-one {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .hero-slider-item .hero-content p {
+    font-size: 11px;
+  }
+  .hero-slider-item .hero-content .hero-bottom .default-btn.btn-style-one {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .single-conference-img {
+    padding-right: 0;
+    margin-left: 0;
+  }
+  .single-conference-content .conference-item {
+    padding-right: 70px;
+  }
+  .conference-planning-area .col-lg-4:nth-child(1) .single-conference-card {
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(2) .single-conference-card {
+    left: 0;
+    right: 0;
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(3) .single-conference-card {
+    margin-right: 0;
+  }
+  .conference-schedules-content .single-schedules-item .schedules-images {
+    margin-left: 0;
+  }
+  .conference-schedules-content .schedules-design-content {
+    padding-left: 0;
+  }
+  .upcoming-list .live-auctions-countdown li:last-child {
+    margin-left: 30px;
+    margin-right: 0;
+  }
+  .why-the-conference-image {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .why-the-conference-image .why-the-conference-img-2 {
+    left: auto;
+    right: 0;
+  }
+  .blog-right-hover-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .blog-hover-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .footer-widget.footer-widget-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer-widget.footer-widget-link2 {
+    right: 0;
+  }
+  .footer-instagram {
+    right: 0;
+    padding-right: 0;
+  }
+  .footer-subscribe {
+    margin-right: 0;
+  }
+  .submenu-left-content {
+    text-align: center;
+  }
+  .submenu-left-content ul li {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 20px;
+  }
+  .submenu-left-content ul li:last-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .submenu-right-content {
+    text-align: center;
+  }
+  .join-conference-content .join-conference-card {
+    padding-left: 0;
+    padding-right: 80px;
+  }
+  .join-conference-content .join-conference-item {
+    text-align: right;
+  }
+  .join-conference-content .join-conference-item img {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .join-conference-content .join-conference-item p {
+    text-align: right;
+  }
+  .schedules-style-two-content .digital-schedules-item {
+    left: 0;
+    right: 0;
+  }
+  .schedules-style-two-content .digital-schedules-item .client-speakers {
+    padding-left: 0;
+    padding-right: 104px;
+  }
+  .schedules-style-two-content .digital-schedules-item .schedules-client {
+    padding-left: 0;
+    padding-right: 50px;
+  }
+  .why-the-conference-content.conference-style-two-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .why-the-conference-content.conference-style-two-content ul li {
+    padding-left: 0;
+  }
+  .footer-area.footer-style-two .footer-widget.footer-widget-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer-area.footer-style-two .footer-widget.services-widget {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .single-blog-style-two-card .blog-style-two-content .date {
+    left: 20px;
+  }
+  .single-category-card {
+    padding: 45px 58px 45px 17px;
+  }
+  .schedules-style-three-content .schedules-speakers-img .speakers-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .schedules-style-three-content .schedules-speakers-img ul li {
+    margin-right: 0;
+  }
+  .single-faqs-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blog-style-three-area .container-fluid {
+    right: unset;
+  }
+  .single-events-item .events-content {
+    padding: 15px;
+  }
+  .single-events-item .events-content ul {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .single-events-item .events-content ul li {
+    margin-left: 5px;
+  }
+  .single-event-details-content .event-details-card {
+    padding: 20px;
+  }
+  .blog-post-card .blog-post-text ul li {
+    margin-right: 0;
+    margin-left: 10px;
+    padding-left: 0;
+    padding-right: 25px;
+  }
+  .blog-post-right-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .single-blog-details-content .event-details-card {
+    padding: 20px;
+  }
+  .single-blog-details-content .d-flex {
+    margin-bottom: 30px;
+    margin-top: 35px;
+  }
+  .single-blog-details-content .d-flex .popular-tags ul li span {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+  .single-blog-details-content .d-flex .blog-sewile-list ul li span {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .single-blog-details-content .blog-details-comment .reply-btn {
+    text-align: right;
+    margin-top: 5px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-instagram {
+    right: 0;
+  }
+  .footer-subscribe {
+    margin-right: 30px;
+  }
+  .submenu-left-content ul li {
+    padding-right: 20px;
+  }
+  .submenu-left-content ul li:last-child {
+    margin-right: 4px;
+  }
+  .submenu-right-content ul li {
+    margin-left: 0;
+  }
+  .mean-container .mean-nav ul li a.mean-expand {
+    text-align: left;
+    right: auto;
+    left: 0;
+  }
+  .mean-container .mean-nav ul li a {
+    text-align: right;
+  }
+  .others-option-for-responsive .dot-menu {
+    right: auto;
+    left: 55px;
+  }
+  .mobile-nav .logo {
+    right: 0;
+    left: auto;
+  }
+  .mean-container a.meanmenu-reveal {
+    padding: 12px 0 0 0;
+    color: #3D8BC1;
+    top: -32px;
+    right: auto !important;
+    left: 0 !important;
+  }
+  .navbar-nav {
+    max-height: 40vh;
+  }
+  .others-option-for-responsive .others-option .option-item .search-button {
+    right: auto;
+    left: 20px;
+  }
+  .single-conference-img {
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(1) .single-conference-card {
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(2) .single-conference-card {
+    left: 0;
+    right: 0;
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(3) .single-conference-card {
+    margin-right: 0;
+  }
+  .why-the-conference-image {
+    margin-left: 0;
+  }
+  .blog-right-hover-content {
+    margin-right: 0;
+  }
+  .single-blog-style-two-card .blog-style-two-content .date {
+    left: 20px;
+  }
+  .why-the-conference-content.conference-style-two-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .schedules-style-two-content .digital-schedules-item {
+    left: 0;
+    right: 0;
+  }
+  .blog-post-right-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blog-style-three-area .container-fluid {
+    right: calc((100% - 720px) / 2);
+  }
+  .single-blog-details-content .event-details-card {
+    padding: 25px 100px 25px 25px;
+  }
+  .blog-style-three-slider.owl-theme .owl-nav {
+    position: unset;
+    margin-bottom: 30px !important;
+  }
+  .schedules-style-three-content .schedules-style-list ul li {
+    padding-left: 0;
+    padding-right: 25px;
+  }
+  .schedules-style-three-content .schedules-speakers-img .speakers-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .single-events-item .events-content {
+    padding: 15px;
+  }
+  .single-events-item .events-content ul {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .single-events-item .events-content ul li {
+    margin-left: 5px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .main-nav nav .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  .single-conference-content .conference-item {
+    padding-right: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(1) .single-conference-card {
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(2) .single-conference-card {
+    left: 0;
+    right: 0;
+    margin-left: 0;
+  }
+  .conference-planning-area .col-lg-4:nth-child(3) .single-conference-card {
+    margin-right: 0;
+  }
+  .conference-schedules-content .single-schedules-item .schedules-text .client-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .conference-schedules-content .single-schedules-item .schedules-text .client-item h3 {
+    font-size: 16px;
+  }
+  .conference-schedules-content .schedules-design-content {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .why-the-conference-image {
+    margin-right: 0;
+    margin-left: 30px;
+  }
+  .why-the-conference-content {
+    margin-left: 0;
+  }
+  .why-the-conference-content .section-title h2 {
+    font-size: 28px;
+  }
+  .single-blog-details-content .event-details-card {
+    padding: 20px 100px 20px 20px;
+  }
+  .single-blog-details-content .blog-details-comment {
+    padding: 15px;
+  }
+  .single-blog-details-content .blog-details-comment p {
+    margin-right: -30px;
+  }
+  .single-blog-details-content .blog-details-comment .comment-text .client-name {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .single-blog-details-content .blog-details-comment .comment-text .client-name p {
+    margin-right: 0;
+  }
+  .blog-right-hover-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .footer-instagram {
+    left: 0;
+    right: 0;
+  }
+  .footer-widget.footer-widget-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .join-conference-content .join-conference-card {
+    padding-right: 65px;
+  }
+  .schedules-style-two-content .digital-schedules-item {
+    left: 0;
+    right: -25px;
+  }
+  .schedules-style-two-content .digital-schedules-item .schedules-client {
+    padding-left: 0;
+    padding-right: 50px;
+  }
+  .schedules-style-two-content .digital-schedules-item .client-speakers {
+    padding-left: 0;
+    padding-right: 110px;
+  }
+  .why-the-conference-content ul li {
+    padding-left: 0;
+    padding-right: 30px;
+  }
+  .single-blog-style-two-card .blog-style-two-content ul li {
+    margin-left: 20px;
+  }
+  .single-blog-style-two-card .blog-style-two-content ul li span {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .footer-area.footer-style-two .footer-widget.footer-widget-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer-area.footer-style-two .footer-widget.services-widget {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .single-category-card {
+    padding: 45px 55px 45px 17px;
+  }
+  .schedules-style-three-content .schedules-style-list ul li {
+    padding-left: 0;
+    padding-right: 30px;
+    margin-left: -20px;
+    margin-right: 0;
+    font-size: 13px;
+  }
+  .schedules-style-three-content .digital-schedules-item h3 {
+    padding-left: 0;
+    padding-right: 40px;
+  }
+  .schedules-style-three-content .schedules-speakers-img .speakers-text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .blog-style-three-area .container-fluid {
+    right: calc((100% - 960px) / 2);
+  }
+  .single-events-item .events-content {
+    padding: 0px 0 0px 3px;
+  }
+  .blog-post-right-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blog-post-card .blog-post-text ul li {
+    margin-right: 0;
+    margin-left: 10px;
+    padding-left: 0;
+    padding-right: 25px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .main-nav nav .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-left: 30px;
+  }
+  .single-conference-content .conference-item {
+    padding-left: 0;
+    padding-right: 60px;
+  }
+  .single-conference-card {
+    padding: 60px 16px 20px 20px;
+  }
+  .conference-schedules-content .single-schedules-item .schedules-text .client-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blog-right-hover-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .schedules-style-two-content .digital-schedules-item .schedules-client {
+    padding-left: 0;
+    padding-right: 60px;
+  }
+  .schedules-style-two-content .digital-schedules-item .client-speakers {
+    padding-left: 0;
+    padding-right: 100px;
+  }
+  .footer-area.footer-style-two .footer-widget.services-widget {
+    padding-left: 0;
+    padding-right: 60px;
+  }
+  .footer-area.footer-style-two .footer-widget.footer-widget-link {
+    padding-left: 0;
+    padding-right: 35px;
+  }
+  .blog-style-three-area .container-fluid {
+    right: calc((100% - 1140px) / 2);
+  }
+  .footer-widget.footer-widget-link {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+  .footer-instagram {
+    left: 0;
+    right: -50px;
+  }
+  .single-banner-three-content .banner-input-fill .form-group::after {
+    right: auto;
+    left: -11px;
+  }
+  .single-events-item .events-content {
+    padding: 0px 0 0px 8px;
+  }
+}
+@media only screen and (min-width: 1399px) and (max-width: 1450px) {
+  .conference-schedules-content .single-schedules-item .schedules-text .client-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blog-right-hover-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=rtl.css.map */
