@@ -16,4 +16,5 @@ Route::get('/events', [FrontController::class, 'events'])->name('events');
 Route::get('/events/{categoryId}', [FrontController::class, 'eventsByCategory'])->name('eventsByCategory');
 Route::get('/event/{eventId}', [FrontController::class, 'eventDetails'])->name('eventDetails');
 Route::get('/news', [FrontController::class, 'news'])->name('news');
+Route::get('/newsDetails/{newsId}', [FrontController::class, 'newsDetails'])->name('newsDetails');
 

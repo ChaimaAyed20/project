@@ -33,11 +33,11 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="single-blog-post-content">
-                            <div class="row">
+                            <!--<div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-post-card">
                                         <div class="blog-post-img">
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <img src="assets/images/blog/blog-page-img-1.jpg" alt="images">
                                             </a>
                                         </div>
@@ -46,21 +46,21 @@
                                                 <li><span>Business</span></li>
                                                 <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
                                                 <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
+                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <h3>This Entrepreneur Is Bringing Online
                                                 Personal Market Experience</h3>
                                             </a>
-                                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-post-card">
                                         <div class="blog-post-img">
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <img src="assets/images/blog/blog-page-img-2.jpg" alt="images">
                                             </a>
                                         </div>
@@ -69,21 +69,21 @@
                                                 <li><span>Development</span></li>
                                                 <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
                                                 <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
+                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <h3>Hiring Your Startup’s First Customer
                                                     Success Lead</h3>
                                             </a>
-                                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-post-card">
                                         <div class="blog-post-img">
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <img src="assets/images/blog/blog-page-img-3.jpg" alt="images">
                                             </a>
                                         </div>
@@ -92,21 +92,21 @@
                                                 <li><span>Conference</span></li>
                                                 <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
                                                 <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
+                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <h3>The Planner Was Met To Oversee
                                                     The Opening Ceremony</h3>
                                             </a>
-                                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-post-card">
                                         <div class="blog-post-img">
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <img src="assets/images/blog/blog-page-img-4.jpg" alt="images">
                                             </a>
                                         </div>
@@ -115,21 +115,21 @@
                                                 <li><span>Lifestyle</span></li>
                                                 <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
                                                 <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
+                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <h3>Increase Competitive Advantage
                                                     By Aligning</h3>
                                             </a>
-                                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-post-card">
                                         <div class="blog-post-img">
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <img src="assets/images/blog/blog-page-img-5.jpg" alt="images">
                                             </a>
                                         </div>
@@ -138,21 +138,21 @@
                                                 <li><span>Technology</span></li>
                                                 <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
                                                 <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
+                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <h3>Every Profitable Marketing Strategy
                                                     Requires High-Quality Content</h3>
                                             </a>
-                                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-post-card">
                                         <div class="blog-post-img">
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <img src="assets/images/blog/blog-page-img-6.jpg" alt="images">
                                             </a>
                                         </div>
@@ -161,18 +161,54 @@
                                                 <li><span>Traveling</span></li>
                                                 <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
                                                 <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
+                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html">
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                                 <h3>A Verbal History Of AIM The
                                                     Away Message</h3>
                                             </a>
-                                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
+                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+                            <div class="row">
+    @foreach($newsItems as $news)
+    <div class="col-lg-6 col-md-6">
+        <div class="blog-post-card">
+            <div class="blog-post-img">
+                <a href="{{ route('newsDetails', ['newsId' => $news->id]) }}">
+                    <img src="{{ asset('storage/' . $news->cover) }}" alt="{{ $news->designation_ar }}">
+                </a>
+            </div>
+            <div class="blog-post-text">
+                <ul>
+                    <li><span>خبر</span></li>
+                    <li>
+                        <img src="{{ asset('assets/images/blog/blog-icon-1.svg') }}" alt="date icon">
+                        {{ $news->publication ? \Carbon\Carbon::parse($news->publication)->format('d-M-y') : 'تاريخ غير متوفر' }}
+                    </li>
+                    <li>
+                        <img src="{{ asset('assets/images/blog/blog-icon-2.svg') }}" alt="author icon">
+                        بواسطة <a href="#">{{ $news->author->name ?? 'Admin' }}</a>
+                    </li>
+                </ul>
+                <a href="{{ route('newsDetails', ['newsId' => $news->id]) }}">
+                    <h3>{{ $news->designation_ar }}</h3>
+                </a>
+                <p>{{ \Illuminate\Support\Str::limit($news->description_ar, 150) }}</p>
+                <a href="{{ route('newsDetails', ['newsId' => $news->id]) }}" class="default-btn btn-style-one">
+                    المزيد <i class="bx bx-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+@endforeach
+
+
+</div>
+
                             <div class="blog-post-btn">
                                 <a href="#" class="default-btn">تحميل المزيد<i class="bx bx-plus"></i></a>
                             </div>
@@ -191,34 +227,34 @@
                             <div class="recent-posts-card">
                                 <h2>المنشورات الأكثر شيوعًا</h2>
                                 <div class="recent-posts-item">
-                                    <a href="blog-details.html">
+                                    <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                         <div class="popular-post-img"></div>
                                     </a>
                                     <div class="recent-text">
                                         <p>12-June-24</p>
-                                        <a href="blog-details.html">
+                                        <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                             <h3>The Importance Intrinsic Motivation</h3>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="recent-posts-item">
-                                    <a href="blog-details.html">
+                                    <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                         <div class="popular-post-img popular-post-img-2"></div>
                                     </a>
                                     <div class="recent-text">
                                         <p>25-June-24</p>
-                                        <a href="blog-details.html">
+                                        <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                             <h3>A Better Alternative To Grading Conference</h3>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="recent-posts-item">
-                                    <a href="blog-details.html">
+                                    <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                         <div class="popular-post-img popular-post-img-3"></div>
                                     </a>
                                     <div class="recent-text">
                                         <p>30-June-24</p>
-                                        <a href="blog-details.html">
+                                        <a href="{{route('newsDetails' , ['newsId' => 1])}}">
                                             <h3>Strategic Social Media & Evolution Of Visual</h3>
                                         </a>
                                     </div>

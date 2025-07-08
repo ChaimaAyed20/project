@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Album;
 use Illuminate\Http\Request;
 
@@ -52,9 +53,10 @@ class FrontController extends Controller
         return view('frontend.eventDetails');
     }
     public function news(){
-        return view('frontend.news');
+        $newsItems = News::all();
+        return view('frontend.news', compact('newsItems'));
     }
-    public function newsDetails(){
+    public function newsDetails( $newsId){
         return view('frontend.newsDetails');
     }
 
