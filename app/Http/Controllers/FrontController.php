@@ -12,6 +12,7 @@ class FrontController extends Controller
     public function speakers(){
         return view('frontend.speakers');
     }
+<<<<<<< HEAD
     public function speakers_two(){
         return view('frontend.speakers_two');
     }
@@ -38,5 +39,9 @@ class FrontController extends Controller
     }
     public function schedules2(){
         return view('frontend.schedules2');
+=======
+    public function event(){
+        return view('frontend.event');
+>>>>>>> 90a338c42ba5586c5c6c0dff911d9526d1808df1
     }
 }
