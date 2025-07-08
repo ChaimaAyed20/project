@@ -73,14 +73,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-12">
                                     <div class="events-image">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId' => 1])}}">
                                             <img src="assets/images/events/events-1.jpg" alt="images">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-12">
                                     <div class="events-content">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails', ['eventId' => 1])}}">
                                             <h3>What The Community Says About Learnway</h3>
                                         </a>
                                         <p>There are many variations of passages sun
@@ -99,14 +99,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-12">
                                     <div class="events-image">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <img src="assets/images/events/events-2.jpg" alt="images">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-12">
                                     <div class="events-content">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <h3>Looking For The Best IT Business Solution?</h3>
                                         </a>
                                         <p>There are many variations of passages sun
@@ -125,14 +125,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-12">
                                     <div class="events-image">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <img src="assets/images/events/events-3.jpg" alt="images">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-12">
                                     <div class="events-content">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <h3>Your Understanding Is Our Success</h3>
                                         </a>
                                         <p>There are many variations of passages sun
@@ -151,14 +151,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-12">
                                     <div class="events-image">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <img src="assets/images/events/events-4.jpg" alt="images">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-12">
                                     <div class="events-content">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <h3>Better IT Solutions & Services At Your Fingertips</h3>
                                         </a>
                                         <p>There are many variations of passages sun
@@ -177,14 +177,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-12">
                                     <div class="events-image">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <img src="assets/images/events/events-5.jpg" alt="images">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-12">
                                     <div class="events-content">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <h3>We’re Partner Of Your Business Innovations</h3>
                                         </a>
                                         <p>There are many variations of passages sun
@@ -203,14 +203,14 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-5 col-md-12">
                                     <div class="events-image">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <img src="assets/images/events/events-6.jpg" alt="images">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-12">
                                     <div class="events-content">
-                                        <a href="event-details.html">
+                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
                                             <h3>Join The World's Largest Study Platform Today</h3>
                                         </a>
                                         <p>There are many variations of passages sun

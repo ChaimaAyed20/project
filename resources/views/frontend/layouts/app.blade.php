@@ -12,21 +12,21 @@ function activeClass($pattern) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
        <!--=== Link Of CSS Files ===-->
-        <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css"> 
-        <link rel="stylesheet" href="assets/css/animate.min.css"> 
-        <link rel="stylesheet" href="assets/css/boxicons.min.css">  
-        <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-        <link rel="stylesheet" href="assets/css/fancybox.min.css"> 
-        <link rel="stylesheet" href="assets/css/meanmenu.min.css"> 
-        <link rel="stylesheet" href="assets/css/flaticon.css"> 
-        <link rel="stylesheet" href="assets/css/odometer.min.css"> 
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css"> 
-        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css"> 
-        <link rel="stylesheet" href="assets/css/scrollCue.css"> 
-        <link rel="stylesheet" href="assets/css/style.css"> 
-        <link rel="stylesheet" href="assets/css/responsive.css"> 
-        <link rel="stylesheet" href="assets/css/dark.css"> 
-        <link rel="stylesheet" href="assets/css/rtl.css"> 
+        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.rtl.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/animate.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/boxicons.min.css')}}">  
+        <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/fancybox.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/meanmenu.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/scrollCue.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}"> 
+        <link rel="stylesheet" href="{{asset('assets/css/rtl.css')}}"> 
 
         <!--=== Title & Favicon ===-->
         <title>Nestu - Event Conference & Reunion HTML Template</title>
@@ -36,13 +36,13 @@ function activeClass($pattern) {
     <body>
         
         <!-- Preloader Area -->
-        <div class="preloader">
+        {{-- <div class="preloader">
             <div class="loader">
                 <div class="loader-outter"></div>
                 <div class="loader-inner"></div>
                 <span>N</span>
             </div>
-        </div>
+        </div> --}}
         <!-- End Preloader Area --> 
 
         <!-- Start Dark Mode -->
@@ -168,25 +168,25 @@ function activeClass($pattern) {
                                             </a>   
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="speakers.html" class="nav-link bg-border-top">تاريخ</a>     
+                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'history']) }}" class="nav-link bg-border-top">تاريخ</a>     
                                                 </li>
                                                <li class="nav-item">
-                                                    <a href="speakers-two.html" class="nav-link">جغرافيا</a>     
+                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'geography']) }}" class="nav-link">جغرافيا</a>     
                                                 </li>
                                                 <li class="nav-item"> 
-                                                    <a href="speakers-three.html" class="nav-link bg-border-2">فلسطين في القرآن</a>      
+                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'quran']) }}">فلسطين في القرآن</a>      
                                                 </li>
                                                 <li class="nav-item"> 
-                                                    <a href="speakers-three.html" class="nav-link bg-border-2">فلسطين في السّنة</a>      
+                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'sunnah']) }}">فلسطين في السّنة</a>      
                                                 </li>
                                             </ul>
         
                                         </li>
                                         <li class="nav-item">
-                                            <a href="about-2.html" class="nav-link">مكتبة رقمية</a>     
+                                            <a href="{{ route('librariesByTheme', ['themeId' => 'digitalLibrary']) }}" class="nav-link">مكتبة رقمية</a>     
                                         </li> 
                                         <li class="nav-item">
-                                            <a href="about-3.html" class="nav-link bg-border-2">مراجع</a>     
+                                            <a href="{{ route('librariesByTheme', ['themeId' => 'references']) }}" class="nav-link bg-border-2">مراجع</a>     
                                         </li> 
                                     </ul>
 
@@ -203,24 +203,24 @@ function activeClass($pattern) {
                                             <a href="event.html" class="nav-link bg-border-top">تظاهرات</a>     
                                         </li>  -->
                                         <li class="nav-item">
-                                            <a href="blog.html" class="nav-link">أخبار</a>     
+                                            <a href="{{route('news')}}" class="nav-link">أخبار</a>     
                                         </li> 
 
                                         <li class="nav-item"> 
 
-                                            <a href="#" class="nav-link dropdown-toggle">
+                                            <a href="{{route('events')}}" class="nav-link dropdown-toggle">
                                                 تظاهرات
                                             </a>   
                                             
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="event.html" class="nav-link bg-border-top">تونسية</a>     
+                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 1])}}" class="nav-link bg-border-top">تونسية</a>     
                                                 </li>
                                                <li class="nav-item">
-                                                    <a href="event.html" class="nav-link">عربية</a>     
+                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 2])}}" class="nav-link">عربية</a>     
                                                 </li>
                                                     <li class="nav-item"> 
-                                                    <a href="event.html" class="nav-link bg-border-2">عالمية</a>      
+                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 3])}}">عالمية</a>      
                                                 </li>  
                                             </ul>
         
@@ -237,18 +237,18 @@ function activeClass($pattern) {
                                 </li> 
 
                                 <li class="nav-item "> 
-                                    <a href="gallery.html" class="nav-link"> معرض الصور</a>      
+                                    <a href="{{route('galleries')}}" class="nav-link"> معرض الصور</a>      
                                 </li> 
 
                                
                                         <li class="nav-item">
-                                            <a href="pricing.html" class="nav-link bg-border-top">شارك مقالاتك</a>     
+                                            <a href="{{route('topics')}}" class="nav-link bg-border-top">شارك مقالاتك</a>     
                                         </li> 
                                  
                                 
                                 <li class="nav-item"> 
-    <a href="contact.html" class="nav-link">تواصل معنا</a>      
-</li> 
+                                    <a href="{{route('contact')}}" class="nav-link">تواصل معنا</a>      
+                                </li> 
 
 
                             </ul> 
@@ -267,7 +267,7 @@ function activeClass($pattern) {
                                 </div> -->
 
                                <div class="option-item">
-                                    <a href="schedules.html" class="default-btn">فلسطين بعيون تونسية <i class='bx bx-plus'></i></a> 
+                                    <a href="{{route('schedules')}}" class="default-btn">فلسطين بعيون تونسية <i class='bx bx-plus'></i></a> 
                                 </div>
                             </div>
                         </div>
@@ -432,22 +432,22 @@ function activeClass($pattern) {
 
         <!--=== Link Of JS Files ===-->
         <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/meanmenu.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script> 
-        <script src="assets/js/bootstrap-datepicker.min.js"></script>
-        <script src="assets/js/downCount.js"></script>
-        <script src="assets/js/scrollCue.min.js"></script>
-        <script src="assets/js/fancybox.min.js"></script>
-        <script src="assets/js/appear.min.js"></script>
-        <script src="assets/js/odometer.min.js"></script>
-        <script src="assets/js/magnific-popup.min.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/parallax.min.js"></script>
-        <script src="assets/js/ajaxchimp.min.js"></script>
-        <script src="assets/js/form-validator.min.js"></script>
-        <script src="assets/js/subscribe-custom.js"></script>
-        <script src="assets/js/contact-form-script.js"></script>
-        <script src="assets/js/custom.js"></script>
+        <script src="{{asset('asset(s/js/meanmenu.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/bootstrap.bundle.min.js')}}"></script> 
+        <script src="{{asset('asset(s/js/bootstrap-datepicker.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/downCount.js')}}"></script>
+        <script src="{{asset('asset(s/js/scrollCue.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/fancybox.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/appear.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/odometer.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/magnific-popup.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/parallax.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/form-validator.min.js')}}"></script>
+        <script src="{{asset('asset(s/js/subscribe-custom.js')}}"></script>
+        <script src="{{asset('asset(s/js/contact-form-script.js')}}"></script>
+        <script src="{{asset('assets/js/custom.js')}}"></script>
 
     </body>
 </html>

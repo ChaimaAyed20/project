@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -9,27 +10,31 @@ class FrontController extends Controller
     public function index(){
         return view('frontend.index');
     }
-    public function speakers(){
-        return view('frontend.speakers');
+    public function librariesByTheme($themeId)
+    {
+
+        $availableThemes = [
+            'history',
+            'geography',
+            'quran',
+            'sunnah',
+            'digitalLibrary',
+            'references'
+        ];
+
+        if (in_array($themeId, $availableThemes)) {
+            return view("frontend.$themeId");
+        }
     }
-<<<<<<< HEAD
-    public function speakers_two(){
-        return view('frontend.speakers_two');
+
+    
+    public function galleries(){
+
+        $galleries = Album::all();
+        return view('frontend.gallery' , compact('galleries'));
     }
-    public function speakers_three(){
-        return view('frontend.speakers_three');
-    }
-    public function about_2(){
-        return view('frontend.about_2');
-    }
-    public function about_3(){
-        return view('frontend.about_3');
-    }
-    public function gallery(){
-        return view('frontend.gallery');
-    }
-    public function pricing(){
-        return view('frontend.pricing');
+    public function topics(){
+        return view('frontend.topic');
     }
     public function contact(){
         return view('frontend.contact');
@@ -37,11 +42,21 @@ class FrontController extends Controller
     public function schedules(){
         return view('frontend.schedules');
     }
-    public function schedules2(){
-        return view('frontend.schedules2');
-=======
-    public function event(){
+    public function events(){
         return view('frontend.event');
->>>>>>> 90a338c42ba5586c5c6c0dff911d9526d1808df1
     }
+    public function eventsByCategory( $categoryId){
+        return view('frontend.event');
+    }
+    public function eventDetails( $eventId){
+        return view('frontend.eventDetails');
+    }
+    public function news(){
+        return view('frontend.news');
+    }
+    public function newsDetails(){
+        return view('frontend.newsDetails');
+    }
+
+
 }

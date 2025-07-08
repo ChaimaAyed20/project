@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="hero-shape-1">
-                        <img src="assets/images/banner/banner-one-shape-1.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-1.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-2">
                         <img src="assets/images/banner/banner-one-shape-2.png" alt="images">
@@ -60,7 +60,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="single-conference-img">
-                            <img src="assets/images/conference/conference-img-3.jpg" alt="images" data-cue="slideInDown" data-duration="2000">
+                            <img src="{{ asset('assets/images/conference/conference-img-3.jpg') }}" alt="images" data-cue="slideInDown" data-duration="2000">
                             <div class="conference-img-2" data-cue="slideInLeft" data-duration="2000">
                                 <img src="assets/images/conference/conference-img-1.jpg" alt="images" style="width: 312px;">
                             </div>
