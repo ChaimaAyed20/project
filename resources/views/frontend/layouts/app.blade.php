@@ -1,3 +1,8 @@
+@php
+function activeClass($pattern) {
+    return Request::is($pattern) ? 'active text-danger' : '';
+}
+@endphp
 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -242,8 +247,10 @@
                                  
                                 
                                 <li class="nav-item"> 
-                                    <a href="contact.html" class="nav-link">تواصل معنا</a>      
-                                </li> 
+    <a href="contact.html" class="nav-link">تواصل معنا</a>      
+</li> 
+
+
                             </ul> 
 
 
@@ -303,7 +310,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-sm-6 col-md-4" data-cue="slideInUp">
                                 <div class="footer-widget footer-widget-link">
-                                    <h2>Useful Links</h2>
+                                    <h2>روابط مفيدة</h2>
                                     <ul class="footer-widget-list">
                                         <li>
                                             <a href="speakers.html">Speakers</a>
@@ -322,7 +329,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-sm-6 col-md-4" data-cue="slideInUp">
                                 <div class="footer-widget footer-widget-link2">
-                                    <h2>Find Conference</h2>
+                                    <h2>البحث عن المؤتمرات</h2>
                                     <ul class="footer-widget-list">
                                         <li>
                                             <a href="#">Business Conference</a>
@@ -345,7 +352,7 @@
                         <div class="row">
                             <div class="col-xl-5 col-lg-12 col-md-5" data-cue="slideInUp">
                                 <div class="footer-instagram">
-                                    <h2>Instagram</h2>
+                                    <h2>مواقع التواصل الاجتماعي</h2>
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-2 col-4 col-sm-4 col-md-4">
                                             <div class="instagram-img">
@@ -399,7 +406,7 @@
                                         <input type="email" class="form-control" placeholder="Enter your email" name="EMAIL" required="" autocomplete="off">
                             
                                         <button type="submit" class="default-btn">
-                                            Subscribe Now <i class='bx bx-plus'></i> 
+                                            اشترك الان <i class='bx bx-plus'></i> 
                                         </button>
                             
                                         <div id="validator-newsletter" class="form-result"></div>

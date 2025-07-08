@@ -4014,7 +4014,7 @@ Start Page Banner Area
 }
 .page-banner-area.page-pricing-table {
   background-image: url(../images/banner/تارييخ.png);
-  height: 300px;
+  height: 100px;
   background-size: cover;      /* L’image couvre toute la bannière */
   background-position: center;}
 
