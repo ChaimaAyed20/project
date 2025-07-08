@@ -12,4 +12,7 @@ class FrontController extends Controller
     public function speakers(){
         return view('frontend.speakers');
     }
+    public function event(){
+        return view('frontend.event');
+    }
 }

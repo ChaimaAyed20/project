@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 Route::get('/',[FrontController::class, 'index'])->name('home');
 Route::get('/speakers.html', [FrontController::class, 'speakers'])->name('speakers');
+Route::get('/event.html', [FrontController::class, 'event'])->name('event');
+
