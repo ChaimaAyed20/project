@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Album;
 use Illuminate\Http\Request;
+use App\Models\Coordonnee;
 
 class FrontController extends Controller
 {
@@ -37,8 +38,10 @@ class FrontController extends Controller
     public function topics(){
         return view('frontend.topic');
     }
-    public function contact(){
-        return view('frontend.contact');
+    public function contact()
+    {
+        $coordonnees = Coordonnee::first(); 
+        return view('frontend.contact', compact('coordonnees'));
     }
     public function schedules(){
         return view('frontend.schedules');
@@ -59,6 +62,7 @@ class FrontController extends Controller
     public function newsDetails( $newsId){
         return view('frontend.newsDetails');
     }
+    
 
 
 }
