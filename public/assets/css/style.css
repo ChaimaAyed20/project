@@ -3643,22 +3643,46 @@ Start Our Blog Post Area
 ========================================*/
 .blog-post-card {
   background: #FFFFFF;
+  min-height: 250px;
   box-shadow: 0px 6px 30px rgba(17, 17, 17, 0.04);
   border-radius: 0px 0px 10px 10px;
   margin-bottom: 30px;
   transition: var(--transition);
 }
 .blog-post-card .blog-post-img {
+  width: 100%;      /* largeur 100% du conteneur parent */
+  height: 220px;
   position: relative;
   overflow: hidden;
   border-radius: 10px 10px 0px 0px;
 }
 .blog-post-card .blog-post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px 10px 0px 0px;
   transition: var(--transition);
 }
 .blog-post-card .blog-post-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 30px;
+  padding-bottom: 40px;
+}
+.blog-post-text h3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-post-text p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .blog-post-card .blog-post-text ul {
   padding-left: 0;
