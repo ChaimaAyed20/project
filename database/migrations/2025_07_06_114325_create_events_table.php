@@ -25,6 +25,7 @@ return new class extends Migration
             $table->dateTime('end_date');
             $table->string('place')->nullable();
             $table->text('organizer')->nullable();
+            $table->json('cover')->nullable(); // nom du fichier image
 
             $table->timestamps();
         });

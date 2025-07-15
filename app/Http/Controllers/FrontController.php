@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Album;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -44,20 +45,30 @@ class FrontController extends Controller
         return view('frontend.schedules');
     }
     public function events(){
-        return view('frontend.event');
+        $events = Event::with('categories')->get();
+        return view('frontend.event', compact('events'));
     }
-    public function eventsByCategory( $categoryId){
-        return view('frontend.event');
+    public function eventsByCategory($categoryId) {
+        $events = Event::whereHas('categories', function ($query) use ($categoryId) {
+        $query->where('events_category.id', $categoryId);
+    })->get();
+    return view('frontend.event', compact('events', 'categoryId'));
     }
     public function eventDetails( $eventId){
         return view('frontend.eventDetails');
     }
     public function news(){
-        $newsItems = News::all();
-        return view('frontend.news', compact('newsItems'));
+        $newsItems = News::with('author')->orderBy('publication', 'desc')->get();
+        $recentNews = News::orderBy('publication', 'desc')->take(2)->get();
+        return view('frontend.news', compact('newsItems', 'recentNews'));
     }
     public function newsDetails( $newsId){
-        return view('frontend.newsDetails');
+        $news = News::with('author')->findOrFail($newsId);
+        $recentNews = News::where('id', '!=', $newsId)
+                      ->orderBy('publication', 'desc')
+                      ->take(2)
+                      ->get();
+        return view('frontend.newsDetails' , compact('news', 'recentNews') );
     }
 
 

@@ -60,265 +60,100 @@
         </div>
         <!-- End Page Banner Area -->
 
-        <!-- Start Events Pages Area -->
-        <div class="events-area pt-100 pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <span class="top-title">تظاهراتنا</span>
-                    <h2>نحن ننظم فعاليات وبرامج سنوية</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="1000">
-                        <div class="single-events-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5 col-md-12">
-                                    <div class="events-image">
-                                        <a href="{{route('eventDetails' , ['eventId' => 1])}}">
-                                            <img src="assets/images/events/events-1.jpg" alt="images">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="events-content">
-                                        <a href="{{route('eventDetails', ['eventId' => 1])}}">
-                                            <h3>What The Community Says About Learnway</h3>
-                                        </a>
-                                        <p>There are many variations of passages sun
-                                        look even slightly believable.</p>
-                                        <ul>
-                                            <li class="events-list-cart"><img src="assets/images/blog/blog-icon-1.svg" alt="images">04 - July - 2024</li>
-                                            <li><img src="assets/images/conference-schedules/schedules-style-two-icon-4.svg" alt="images">New York 512 USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="1500">
-                        <div class="single-events-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5 col-md-12">
-                                    <div class="events-image">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <img src="assets/images/events/events-2.jpg" alt="images">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="events-content">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <h3>Looking For The Best IT Business Solution?</h3>
-                                        </a>
-                                        <p>There are many variations of passages sun
-                                        look even slightly believable.</p>
-                                        <ul>
-                                            <li class="events-list-cart"><img src="assets/images/blog/blog-icon-1.svg" alt="images">04 - July - 2024</li>
-                                            <li><img src="assets/images/conference-schedules/schedules-style-two-icon-4.svg" alt="images">New York 512 USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="2000">
-                        <div class="single-events-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5 col-md-12">
-                                    <div class="events-image">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <img src="assets/images/events/events-3.jpg" alt="images">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="events-content">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <h3>Your Understanding Is Our Success</h3>
-                                        </a>
-                                        <p>There are many variations of passages sun
-                                        look even slightly believable.</p>
-                                        <ul>
-                                            <li class="events-list-cart"><img src="assets/images/blog/blog-icon-1.svg" alt="images">04 - July - 2024</li>
-                                            <li><img src="assets/images/conference-schedules/schedules-style-two-icon-4.svg" alt="images">New York 512 USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="2500">
-                        <div class="single-events-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5 col-md-12">
-                                    <div class="events-image">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <img src="assets/images/events/events-4.jpg" alt="images">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="events-content">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <h3>Better IT Solutions & Services At Your Fingertips</h3>
-                                        </a>
-                                        <p>There are many variations of passages sun
-                                        look even slightly believable.</p>
-                                        <ul>
-                                            <li class="events-list-cart"><img src="assets/images/blog/blog-icon-1.svg" alt="images">04 - July - 2024</li>
-                                            <li><img src="assets/images/conference-schedules/schedules-style-two-icon-4.svg" alt="images">New York 512 USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="3000">
-                        <div class="single-events-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5 col-md-12">
-                                    <div class="events-image">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <img src="assets/images/events/events-5.jpg" alt="images">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="events-content">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <h3>We’re Partner Of Your Business Innovations</h3>
-                                        </a>
-                                        <p>There are many variations of passages sun
-                                        look even slightly believable.</p>
-                                        <ul>
-                                            <li class="events-list-cart"><img src="assets/images/blog/blog-icon-1.svg" alt="images">04 - July - 2024</li>
-                                            <li><img src="assets/images/conference-schedules/schedules-style-two-icon-4.svg" alt="images">New York 512 USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="3500">
-                        <div class="single-events-item">
-                            <div class="row align-items-center">
-                                <div class="col-lg-5 col-md-12">
-                                    <div class="events-image">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <img src="assets/images/events/events-6.jpg" alt="images">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-12">
-                                    <div class="events-content">
-                                        <a href="{{route('eventDetails' , ['eventId'=>1])}}">
-                                            <h3>Join The World's Largest Study Platform Today</h3>
-                                        </a>
-                                        <p>There are many variations of passages sun
-                                        look even slightly believable.</p>
-                                        <ul>
-                                            <li class="events-list-cart"><img src="assets/images/blog/blog-icon-1.svg" alt="images">04 - July - 2024</li>
-                                            <li><img src="assets/images/conference-schedules/schedules-style-two-icon-4.svg" alt="images">New York 512 USA</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Events Pages Area -->
+  <!-- Start Events Pages Area -->
+    <div class="events-area pt-100 pb-70">
+        <div class="container">
 
-        <!-- Start Our Testimonials Area  -->
-        <div class="testimonials-area pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <span class="top-title">آراء العملاء</span>
-                    <h2>ماذا قال زوارنا عنا؟</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInLeft">
-                        <div class="testimonials-card">
-                            <span>15 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-1.jpg" alt="images">
+            @if(isset($categoryId))
+                @php
+                    $categoryNames = [
+                        1 => 'تونسية',
+                        2 => 'عربية',
+                        3 => 'عالمية',
+                    ];
+                @endphp
+            @endif
+
+            <div class="section-title">
+                <span class="top-title">تظاهراتنا</span>
+                <h2>نحن ننظم فعاليات وبرامج سنوية</h2>
+            </div>
+
+           <div class="row">
+    @if($events->isEmpty())
+        <div class="col-12 text-center">
+            <p>لا توجد تظاهرات متاحة حالياً.</p>
+        </div>
+    @else
+        @foreach($events as $event)
+            <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="1000">
+                <div class="single-events-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-12">
+                            <div class="events-image">
+                                <a href="{{ route('eventDetails', ['eventId' => $event->id]) }}">
+                                    <img src="{{ asset('storage/events/' . ($event->cover[0] ?? 'default.jpg')) }}" alt="{{ $event->designation_ar }}">
                                 </a>
-                                <h3>Yolanda Medhurst</h3>
-                                <p>Rigging Chaser</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInUp">
-                        <div class="testimonials-card">
-                            <span>18 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-2.jpg" alt="images">
+                        <div class="col-lg-7 col-md-12">
+                            <div class="events-content">
+                                <a href="{{ route('eventDetails', ['eventId' => $event->id]) }}">
+                                    <h3>{{ $event->designation_ar }}</h3>
                                 </a>
-                                <h3>Jerrold Farrell</h3>
-                                <p>Founder Card</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInDown">
-                        <div class="testimonials-card">
-                            <span>25 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-3.jpg" alt="images">
-                                </a>
-                                <h3>Tamara Waelchi</h3>
-                                <p>Chiropractic Doctor</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInRight">
-                        <div class="testimonials-card">
-                            <span>30 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-4.jpg" alt="images">
-                                </a>
-                                <h3>Ana Greenholt</h3>
-                                <p>Chief Executive</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
+                                <p>{{ \Illuminate\Support\Str::limit($event->description_ar, 120) }}</p>
+                                <ul>
+                                    <li class="events-list-cart">
+                                        <img src="{{ asset('assets/images/blog/blog-icon-1.svg') }}" alt="icon">
+                                        {{ \Carbon\Carbon::parse($event->start_date)->format('d - F - Y') }}
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('assets/images/conference-schedules/schedules-style-two-icon-4.svg') }}" alt="icon">
+                                        {{ $event->place ?? 'غير محدد' }}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        @endforeach
+    @endif
+</div>
+
+
+   </div>
+    </div>
+    <!-- End Events Pages Area -->
+
+    <!-- Start Our Testimonials Area  -->
+    <div class="testimonials-area pb-70">
+        <div class="container">
+            <div class="section-title3">
+                <span class="top-title3">آراء العملاء</span>
+                <h2>ماذا قال زوارنا عنا؟</h2>
+            </div>
+            <div class="row justify-content-center">
+                @foreach(range(1, 4) as $i)
+                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="fadeInUp">
+                        <div class="testimonials-card">
+                            <span>{{ 10 + $i }} - June - 2024</span>
+                            <p>لقد استمتعنا كثيراً في هذا الحدث، كانت تجربة رائعة وتواصلنا مع العديد من الأشخاص.</p>
+                            <div class="testimonials-cliend">
+                                <a href="#">
+                                    <img src="{{ asset("assets/images/testimonials/testimonials-$i.jpg") }}" alt="client-{{ $i }}">
+                                </a>
+                                <h3>اسم الزائر {{ $i }}</h3>
+                                <p>مشارك</p>
+                            </div>
+                            <div class="testimonials-icon">
+                                <img src="{{ asset('assets/images/testimonials/testimonials-shape.svg') }}" alt="shape">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <!-- End Our Testimonials Area  -->
+    </div>
+    <!-- End Our Testimonials Area  -->
 @stop

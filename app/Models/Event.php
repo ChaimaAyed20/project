@@ -10,6 +10,9 @@ class Event extends Model
     use HasFactory;
 
     protected $table = 'events';
+    protected $casts = [
+        'cover' => 'array', // pour gérer le JSON
+    ];
 
     protected $fillable = [
         'events_category_id',

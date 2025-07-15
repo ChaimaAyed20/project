@@ -225,41 +225,25 @@
                                 </form>
                             </div>
                             <div class="recent-posts-card">
-                                <h2>المنشورات الأكثر شيوعًا</h2>
-                                <div class="recent-posts-item">
-                                    <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                        <div class="popular-post-img"></div>
-                                    </a>
-                                    <div class="recent-text">
-                                        <p>12-June-24</p>
-                                        <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                            <h3>The Importance Intrinsic Motivation</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="recent-posts-item">
-                                    <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                        <div class="popular-post-img popular-post-img-2"></div>
-                                    </a>
-                                    <div class="recent-text">
-                                        <p>25-June-24</p>
-                                        <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                            <h3>A Better Alternative To Grading Conference</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="recent-posts-item">
-                                    <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                        <div class="popular-post-img popular-post-img-3"></div>
-                                    </a>
-                                    <div class="recent-text">
-                                        <p>30-June-24</p>
-                                        <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                            <h3>Strategic Social Media & Evolution Of Visual</h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+    <h2>المنشورات الأكثر شيوعًا</h2>
+
+    @foreach($recentNews as $recent)
+    <div class="recent-posts-item">
+        <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
+            <div class="popular-post-img">
+                <img src="{{ asset('storage/' . $recent->cover) }}" alt="{{ $recent->designation_ar }}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </a>
+        <div class="recent-text">
+            <p>{{ \Carbon\Carbon::parse($recent->publication)->format('d-M-y') }}</p>
+            <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
+                <h3>{{ \Illuminate\Support\Str::limit($recent->designation_ar, 50) }}</h3>
+            </a>
+        </div>
+    </div>
+    @endforeach
+</div>
+
                             <div class="blog-post-category">
                                <h2>التصنيفات</h2>
                                  <ul>

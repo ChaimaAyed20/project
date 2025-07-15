@@ -29,28 +29,52 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="single-blog-details-content">
-                    <div class="blog-details-img"> 
-                        <img src="assets/images/blog/blog-details-1.jpg" alt="images">
-                    </div>
-                    <ul class="blog-details-list">
-                        <li>
-                            <img src="assets/images/blog/blog-icon-1.svg" alt="images"> 30-June-24
-                        </li>
-                        <li>
-                            <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
-                        </li>
-                    </ul>
-                    <h2>This Entrepreneur Is Bringing Online Personal Market</h2>
-                    <p>Quam amet tristique adipisicing incididunt arcu excepturi molestie turpis deserunt ducimu malesuada minu veniam veniam exercitationem? Phasellus? Officia pulvinar sem cumque voluptatem quisque.</p>
-                    <p>There are many variations of passages of available but the majority have suffered alteration in some form by injected humour or randomised words which so look even slightly belevable embarrassing hidden in the middle text mus delectus incidunt tincidunt, placerat nobis dolore maiores etiam porttitor.</p>
-                    <div class="event-details-card">
-                        <img src="assets/images/events/events-details-icon.svg" alt="images">
-                        <p>“ There are many variations of passages of available the majority have suffered isting alteration
-                        injected humour or words which so look even slightly belevable embarrassing in
-                        mus delectus incidunt tincidunt placerat nobis dolore maiores etiam porttitor.”</p>
-                    </div>
-                    <p>Quam amet tristique adipisicing incididunt arcu excepturi molestie turpis deserunt ducimu malesuada minu veniam veniam exercitationem? Phasellus? Officia pulvinar sem cumque voluptatem quisque.</p>
-                    <p>There are many variations of passages of available but the majority have suffered alteration in some form by injected humour or randomised words which so look even slightly belevable embarrassing hidden in the middle text mus delectus incidunt tincidunt, placerat nobis dolore maiores etiam porttitor.</p>
+    {{-- Image principale --}}
+    <div class="blog-details-img"> 
+        <img src="{{ asset('storage/' . $news->cover) }}" alt="{{ $news->designation_ar }}">
+    </div>
+
+    {{-- Date et auteur --}}
+    <ul class="blog-details-list">
+        <li>
+            <img src="{{ asset('assets/images/blog/blog-icon-1.svg') }}" alt="date">
+            {{ \Carbon\Carbon::parse($news->publication)->format('d-m-Y') }}
+        </li>
+        <li>
+            <img src="{{ asset('assets/images/blog/blog-icon-2.svg') }}" alt="author">
+            بواسطة <a href="#">{{ $news->author->name ?? 'Admin' }}</a>
+        </li>
+    </ul>
+
+    {{-- Titre --}}
+    <h2>{{ $news->designation_ar }}</h2>
+
+    {{-- Description avec paragraphes --}}
+    @foreach(explode("\n", $news->description_ar) as $paragraph)
+        <p>{{ $paragraph }}</p>
+    @endforeach
+
+    {{-- Fichiers joints --}}
+    @if($news->files)
+        <h4>الملفات المرفقة:</h4>
+        <ul>
+            @foreach($news->files as $file)
+                <li><a href="{{ asset('storage/' . $file) }}" target="_blank">📄 تحميل الملف</a></li>
+            @endforeach
+        </ul>
+    @endif
+
+    {{-- Images supplémentaires --}}
+    @if($news->images)
+        <h4>صور إضافية:</h4>
+        <div class="row">
+            @foreach($news->images as $image)
+                <div class="col-md-4">
+                    <img src="{{ asset('storage/' . $image) }}" alt="image" class="img-fluid mb-3">
+                </div>
+            @endforeach
+        </div>
+    @endif
                     <div class="d-flex justify-content-between">
                         <div class="popular-tags">
                             <ul>
@@ -214,41 +238,25 @@
                         </form>
                     </div>
                     <div class="recent-posts-card">
-                        <h2>المنشورات الأكثر شيوعًا</h2>
-                        <div class="recent-posts-item">
-                            <a href="blog-details.html">
-                                <div class="popular-post-img"></div>
-                            </a>
-                            <div class="recent-text">
-                                <p>12-June-24</p>
-                                <a href="blog-details.html">
-                                    <h3>The Importance Intrinsic Motivation</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="recent-posts-item">
-                            <a href="blog-details.html">
-                                <div class="popular-post-img popular-post-img-2"></div>
-                            </a>
-                            <div class="recent-text">
-                                <p>25-June-24</p>
-                                <a href="blog-details.html">
-                                    <h3>A Better Alternative To Grading Conference</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="recent-posts-item">
-                            <a href="blog-details.html">
-                                <div class="popular-post-img popular-post-img-3"></div>
-                            </a>
-                            <div class="recent-text">
-                                <p>30-June-24</p>
-                                <a href="blog-details.html">
-                                    <h3>Strategic Social Media & Evolution Of Visual</h3>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <h2>المنشورات الأكثر شيوعًا</h2>
+
+    @foreach($recentNews as $recent)
+        <div class="recent-posts-item">
+            <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
+                <div class="popular-post-img">
+                    <img src="{{ asset('storage/' . $recent->cover) }}" alt="{{ $recent->designation_ar }}" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+            </a>
+            <div class="recent-text">
+                <p>{{ \Carbon\Carbon::parse($recent->publication)->format('d-m-Y') }}</p>
+                <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
+                    <h3>{{ \Illuminate\Support\Str::limit($recent->designation_ar, 40) }}</h3>
+                </a>
+            </div>
+        </div>
+    @endforeach
+</div>
+
                     <div class="blog-post-category">
                        <h2>التصنيفات</h2>
                          <ul>
