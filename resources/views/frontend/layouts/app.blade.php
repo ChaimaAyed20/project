@@ -62,16 +62,16 @@ function activeClass($pattern) {
                         <div class="submenu-left-content">
                             <ul>
                                 <li>
-                                    <img src="assets/images/submenu-icon-1.svg" alt="images">
-                                    <a href="tel:012325621563">012-3256-21563</a>
+                                    <img src="{{ asset('assets/images/submenu-icon-1.svg') }}" alt="images">
+                                    <a href="tel:{{ $coordonnees->phone ?? '' }}">{{ $coordonnees->phone ?? 'Non défini' }}</a>
                                 </li>
                                 <li>
-                                    <img src="assets/images/submenu-icon.svg" alt="images">
-                                    <p>Milton Street Here, New York 512 USA</p>
+                                    <img src="{{ asset('assets/images/submenu-icon.svg') }}" alt="images">
+                                    <p>{{ $coordonnees->address ?? 'Adresse non définie' }}</p>
                                 </li>
                                 <li>
-                                    <img src="assets/images/submenu-icon-2.svg" alt="images">
-                                    <a href="/cdn-cgi/l/email-protection#3159545d5d5e715f544245441f525e5c"><span class="__cf_email__" data-cfemail="4129242d2d2e012f243235346f222e2c">[email&#160;protected]</span></a>
+                                    <img src="{{ asset('assets/images/submenu-icon-2.svg') }}" alt="images">
+                                    <a href="mailto:{{ $coordonnees->email ?? '' }}">{{ $coordonnees->email ?? 'Email non défini' }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,33 +82,24 @@ function activeClass($pattern) {
                                 <li>
                                     <p>Follow Us:</p>
                                 </li>
-                                <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
-                                        <i class='bx bxl-facebook'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/" target="_blank">
-                                        <i class='bx bxl-twitter'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
-                                        <i class='bx bxl-linkedin'></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.pinterest.com/" target="_blank">
-                                        <i class='bx bxl-pinterest'></i>
-                                    </a>
-                                </li>
+                                @if($coordonnees->facebook)
+                                    <li><a href="{{ $coordonnees->facebook }}" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                                @endif
+                                @if($coordonnees->instagram)
+                                    <li><a href="{{ $coordonnees->instagram }}" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                                @endif
+                                @if($coordonnees->youtube)
+                                    <li><a href="{{ $coordonnees->youtube }}" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+                                @endif
+                                @if($coordonnees->linkedin)
+                                    <li><a href="{{ $coordonnees->linkedin }}" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Submenu Area -->
 
         <!-- Start Menubar Area --> 
        <div class="navbar-area"> 
@@ -129,7 +120,7 @@ function activeClass($pattern) {
                 <div class="container-fluid">    
                     <nav class="navbar navbar-expand-md navbar-light">   
 
-                        <a href="index.html">   
+                        <a href="{{route('home')}}">   
                             <img src="assets/images/logo-one.png" class="logo-light" alt="images" style="width: 220px;">   
                             <img src="assets/images/logo-two.png" class="logo-dark" alt="images">   
                         </a>   
@@ -137,7 +128,7 @@ function activeClass($pattern) {
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent"> 
                             <ul class="navbar-nav m-auto">  
                                 <li class="nav-item nav-item-five">  
-                                    <a href="#" class="nav-link active">
+                                    <a href="{{route('home')}}" class="nav-link active">
                                         الصفحة الرئيسيّة
                                     </a>
                                     

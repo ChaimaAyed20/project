@@ -9,6 +9,8 @@ class Coordonnee extends Model
 {
     use HasFactory;
 
+    protected $table = 'coordonnees';
+
     protected $fillable = [
         'phone',
         'email',

@@ -3986,7 +3986,6 @@ Start Page Banner Area
 .page-banner-area.page-testimonials {
   background-image: url(../images/banner/ref.png);
   height: 300px;
-
 }
 .page-banner-area.page-testimonials::after {
   content: "";
