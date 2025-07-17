@@ -17,13 +17,13 @@
                         <img src="{{asset('assets/images/banner/banner-one-shape-1.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-2">
-                        <img src="assets/images/banner/banner-one-shape-2.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-2.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-3">
-                        <img src="assets/images/banner/banner-one-shape-3.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-3.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-4">
-                        <img src="assets/images/banner/banner-one-shape.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape.png')}}" alt="images">
                     </div>
                 </div>
                 <div class="hero-slider-item bg-img-1">
@@ -38,16 +38,16 @@
                         </div>
                     </div>
                     <div class="hero-shape-1">
-                        <img src="assets/images/banner/banner-one-shape-1.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-1.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-2">
-                        <img src="assets/images/banner/banner-one-shape-2.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-2.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-3">
-                        <img src="assets/images/banner/banner-one-shape-3.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-3.png')}}" alt="images">
                     </div>
                     <div class="hero-shape-5">
-                        <img src="assets/images/banner/banner-one-shape-4.png" alt="images">
+                        <img src="{{asset('assets/images/banner/banner-one-shape-4.png')}}" alt="images">
                     </div>
                 </div>
             </div>
@@ -185,7 +185,7 @@
                                 available but the majority have form by injected humou
                                 or randomised word which don't abelievable.</p>
                             </div>
-                            <a href="blog-details.html" class="default-btn btn-style-one">المزيد من المقالات <i class='bx bx-plus'></i></a>
+                            <a href="{{route('news')}}" class="default-btn btn-style-one">المزيد من المقالات <i class='bx bx-plus'></i></a>
                         </div>
                     </div>
                     <div class="col-lg-12 col-xl-8">
@@ -201,60 +201,32 @@
                                 <div class="col-lg-6 col-md-6">
                                     <div class="blog-hover-content">
                                         <ul>
-                                            <li>
-                                                <div class="single-hover-content">
-                                                    <ul>
-                                                        <li>
-                                                            <img src="assets/images/blog/blog-icon-1.svg" alt="images"> 30-June-24
-                                                        </li>
-                                                        <li>
-                                                            <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
-                                                        </li>
-                                                    </ul>
-                                                    <a href="blog-details.html">
-                                                        <h3>This Entrepreneur Is Bringing Online
-                                                            Personal Market Experience</h3>
-                                                    </a>
-                                                    <a href="blog-details.html" class="read-more">اقرأ المزيد<i class="bx bx-plus"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="single-hover-content">
-                                                    <ul>
-                                                        <li>
-                                                            <img src="assets/images/blog/blog-icon-1.svg" alt="images"> 30-June-24
-                                                        </li>
-                                                        <li>
-                                                            <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
-                                                        </li>
-                                                    </ul>
-                                                    <a href="blog-details.html">
-                                                        <h3>Hiring Your Startup’s First Customer
-                                                            Success Lead</h3>
-                                                    </a>
-                                                    <a href="blog-details.html" class="read-more">اقرأ المزيد<i class="bx bx-plus"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="single-hover-content">
-                                                    <ul>
-                                                        <li>
-                                                            <img src="assets/images/blog/blog-icon-1.svg" alt="images"> 30-June-24
-                                                        </li>
-                                                        <li>
-                                                            <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="blog-details.html">Admin</a>
-                                                        </li>
-                                                    </ul>
-                                                    <a href="blog-details.html">
-                                                        <h3>Every Profitable Marketing Strategy
-                                                            Requires High-Quality Content</h3>
-                                                    </a>
-                                                    <a href="blog-details.html" class="read-more">اقرأ المزيد<i class="bx bx-plus"></i></a>
-                                                </div>
-                                            </li>
+                                            @foreach($recentNews as $news)
+                                                <li>
+                                                    <div class="single-hover-content">
+                                                        <ul>
+                                                            <li>
+                                                                <img src="{{ asset('assets/images/blog/blog-icon-1.svg') }}" alt="date">
+                                                                {{ \Carbon\Carbon::parse($news->publication)->format('d-M-Y') }}
+                                                            </li>
+                                                            <li>
+                                                                <img src="{{ asset('assets/images/blog/blog-icon-2.svg') }}" alt="author">
+                                                                بواسطة <a href="#">{{ $news->author->name ?? 'Admin' }}</a>
+                                                            </li>
+                                                        </ul>
+                                                        <a href="{{ route('newsDetails', ['newsId' => $news->id]) }}">
+                                                            <h3>{{ $news->designation_ar }}</h3>
+                                                        </a>
+                                                        <a href="{{ route('newsDetails', ['newsId' => $news->id]) }}" class="read-more">
+                                                            اقرأ المزيد <i class="bx bx-plus"></i>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -275,488 +247,49 @@
                 </div>
                 <div class="conference-schedules-tab">
                    
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-1.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-4.jpg" alt="images">
-                                                    <h3>Charlene Bernhard</h3>
-                                                    <p>Chief Officer</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Ui/Ux Design</span>
-                                            <h3>Digital World Conference</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">شارك <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-2.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-5.jpg" alt="images">
-                                                    <h3>Ernestine Willms</h3>
-                                                    <p>Web Technologist</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Video Streaming</span>
-                                            <h3>Renewal Day Experience</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">شارك <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-3.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-6.jpg" alt="images">
-                                                    <h3>Samara Kovacek</h3>
-                                                    <p>Co-founder</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Coffee & Snacks</span>
-                                            <h3>Building A Successful Business</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">شارك <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-1.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-4.jpg" alt="images">
-                                                    <h3>Charlene Bernhard</h3>
-                                                    <p>Chief Officer</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Ui/Ux Design</span>
-                                            <h3>Digital World Conference</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">شارك <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-2.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-5.jpg" alt="images">
-                                                    <h3>Ernestine Willms</h3>
-                                                    <p>Web Technologist</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Video Streaming</span>
-                                            <h3>Renewal Day Experience</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">شارك <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-2.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-5.jpg" alt="images">
-                                                    <h3>Ernestine Willms</h3>
-                                                    <p>Web Technologist</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Video Streaming</span>
-                                            <h3>Renewal Day Experience</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-3.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-6.jpg" alt="images">
-                                                    <h3>Samara Kovacek</h3>
-                                                    <p>Co-founder</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Coffee & Snacks</span>
-                                            <h3>Building A Successful Business</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="day-fore-tab-pane" role="tabpanel" aria-labelledby="day-fore-tab" tabindex="0">
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-1.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-4.jpg" alt="images">
-                                                    <h3>Charlene Bernhard</h3>
-                                                    <p>Chief Officer</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Ui/Ux Design</span>
-                                            <h3>Digital World Conference</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-2.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-5.jpg" alt="images">
-                                                    <h3>Ernestine Willms</h3>
-                                                    <p>Web Technologist</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Video Streaming</span>
-                                            <h3>Renewal Day Experience</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-3.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-6.jpg" alt="images">
-                                                    <h3>Samara Kovacek</h3>
-                                                    <p>Co-founder</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Coffee & Snacks</span>
-                                            <h3>Building A Successful Business</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="day-five-tab-pane" role="tabpanel" aria-labelledby="day-five-tab" tabindex="0">
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-3.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-6.jpg" alt="images">
-                                                    <h3>Samara Kovacek</h3>
-                                                    <p>Co-founder</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Coffee & Snacks</span>
-                                            <h3>Building A Successful Business</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-1.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-4.jpg" alt="images">
-                                                    <h3>Charlene Bernhard</h3>
-                                                    <p>Chief Officer</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Ui/Ux Design</span>
-                                            <h3>Digital World Conference</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="day-six-tab-pane" role="tabpanel" aria-labelledby="day-six-tab" tabindex="0">
-                            <div class="conference-schedules-content" data-cue="slideInUp">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5">
-                                        <div class="single-schedules-item">
-                                            <div class="schedules-images">
-                                                <img src="assets/images/conference-schedules/conference-schedules-img-1.jpg" alt="images">
-                                            </div>
-                                            <div class="schedules-text">
-                                                <span><img src="assets/images/conference-schedules/conference-schedules-icon.svg" alt="images">08:30 - 09:30 AM</span>
-                                                <div class="client-item">
-                                                    <img src="assets/images/conference-schedules/conference-schedules-img-4.jpg" alt="images">
-                                                    <h3>Charlene Bernhard</h3>
-                                                    <p>Chief Officer</p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                    <div class="col-lg-5">
-                                        <div class="schedules-design-content">
-                                            <span>Ui/Ux Design</span>
-                                            <h3>Digital World Conference</h3>
-                                            <p>There are many variations of passages of lorem ipsum
-                                            randomised words which don't look even slightly believable
-                                            anything embarrassing hidden in the middle of text.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="schedules-btn">
-                                            <a href="contact.html" class="default-btn btn-style-one">Buy A Tickets <i class='bx bx-plus'></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="conference-schedules-shape">
-                                    <img src="assets/images/conference-schedules/conference-schedules-shape.png" alt="images">
-                                </div>
-                            </div>
+                    @foreach($recentEvents as $event)
+    <div class="conference-schedules-content" data-cue="slideInUp">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="single-schedules-item">
+                    <div class="schedules-images">
+                        @php
+                            $coverImage = is_array($event->cover) ? $event->cover[0] ?? null : $event->cover;
+                        @endphp
+                        <img src="{{ asset('storage/events/' . $coverImage) }}" alt="{{ $event->designation_ar }}">
+                    </div>
+                    <div class="schedules-text">
+                        <span>
+                            <img src="{{ asset('assets/images/conference-schedules/conference-schedules-icon.svg') }}" alt="icon">
+                            {{ \Carbon\Carbon::parse($event->start_date)->format('H:i') }} - {{ \Carbon\Carbon::parse($event->end_date)->format('H:i') }}
+                        </span>
+                        <div class="client-item">
+                            <img src="{{ asset('assets/images/conference-schedules/conference-schedules-img-4.jpg') }}" alt="client">
+                            <h3>{{ $event->organizer ?? 'المنظم' }}</h3>
+                            <p>منظم</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="schedules-design-content">
+                    <span>{{ $event->categories->first()->name ?? 'بدون فئة' }}</span>
+                    <h3>{{ $event->designation_ar }}</h3>
+                    <p>{{ \Illuminate\Support\Str::limit($event->description_ar, 120) }}</p>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="schedules-btn">
+                    <a href="{{ route('eventDetails', ['eventId' => $event->id]) }}" class="default-btn btn-style-one">شارك <i class='bx bx-plus'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="conference-schedules-shape">
+            <img src="{{ asset('assets/images/conference-schedules/conference-schedules-shape.png') }}" alt="images">
+        </div>
+    </div>
+@endforeach
+
                 </div>
             </div>
         </div>
@@ -766,146 +299,60 @@
        
 
        
-        <!-- Start Our Testimonials Area  -->
-        <div class="testimonials-area pb-70">
-            <div class="container">
-                <div class="section-title3">
-                    <span class="top-title3">تقييماتنا</span>
-                    <h2>آراء زوارنا وتجاربهم معنا</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInLeft">
-                        <div class="testimonials-card">
-                            <span>15 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-1.jpg" alt="images">
-                                </a>
-                                <h3>Yolanda Medhurst</h3>
-                                <p>Rigging Chaser</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInUp">
-                        <div class="testimonials-card">
-                            <span>18 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-2.jpg" alt="images">
-                                </a>
-                                <h3>Jerrold Farrell</h3>
-                                <p>Founder Card</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInDown">
-                        <div class="testimonials-card">
-                            <span>25 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-3.jpg" alt="images">
-                                </a>
-                                <h3>Tamara Waelchi</h3>
-                                <p>Chiropractic Doctor</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInRight">
-                        <div class="testimonials-card">
-                            <span>30 - June - 2024</span>
-                            <p>Had a fantastic time at genes
-                            expo got to meet a lot of great
-                            people and hear some amazin
-                            talks thanks @genesisexpo
-                            for a super day!</p>
-                            <div class="testimonials-cliend">
-                                <a href="testimonials.html">
-                                    <img src="assets/images/testimonials/testimonials-4.jpg" alt="images">
-                                </a>
-                                <h3>Ana Greenholt</h3>
-                                <p>Chief Executive</p>
-                            </div>
-                            <div class="testimonials-icon">
-                                <img src="assets/images/testimonials/testimonials-shape.svg" alt="images">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       <!-- Start Our Testimonials Area -->
+<div class="testimonials-area pb-70">
+    <div class="container">
+        <div class="section-title3">
+            <span class="top-title3">تقييماتنا</span>
+            <h2>آراء زوارنا وتجاربهم معنا</h2>
         </div>
-        <!-- End Our Testimonials Area  -->
+        <div class="row justify-content-center">
+            @foreach($comments as $comment)
+                <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="slideInUp">
+                    <div class="testimonials-card">
+                        <span>{{ $comment->created_at->format('d - F - Y') }}</span>
+                        <p>{{ $comment->content }}</p>
+                        <div class="testimonials-cliend">
+                            <a href="#">
+                                <img src="{{ asset('assets/images/default-user.png') }}" alt="user">
+                            </a>
+                            <h3>{{ $comment->user->name ?? 'مستخدم مجهول' }}</h3>
+                            <p>زائر</p>
+                        </div>
+                        <div class="testimonials-icon">
+                            <img src="{{ asset('assets/images/testimonials/testimonials-shape.svg') }}" alt="shape">
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+<!-- End Our Testimonials Area -->
+
 
         
-<!-- Start Best Sponsor Area -->
-        <div class="sponsor-pages-area pt-100 pb-100">
-            <div class="container">
-                <div class="section-title">
-                    <span class="top-title">أفضل جهة راعية</span>
-                    <h2>أفضل شركائنا في الترويج والرعاية العالمية</h2>
-                </div>
-                <div class="row align-items-center justify-content-center"> 
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-6.png" alt="images">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-1.png" alt="images">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-2.png" alt="images">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-3.png" alt="images">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-4.png" alt="images">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-7.png" alt="images">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-4 col-sm-4 col-md-4">
-                        <div class="sponsor-logo-img">
-                            <img src="assets/images/sponsor/sponsor-5.png" alt="images">
-                        </div>
+<!-- Start Sponsors Area -->
+<section class="partners-area pt-70 pb-70">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>شركاؤنا</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            @foreach($partners as $partner)
+                <div class="col-lg-2 col-md-3 col-6 mb-4">
+                    <div class="single-partner text-center">
+                        <a href="{{ $partner->link ?? '#' }}" target="_blank">
+                            <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->designation_ar }}" style="max-width: 100px; max-height: 80px;">
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div> 
-        <!-- End Best Sponsor Area -->
+            @endforeach
+        </div>
+    </div>
+</section>
+<!-- End Sponsors Area -->
+
         
 @stop

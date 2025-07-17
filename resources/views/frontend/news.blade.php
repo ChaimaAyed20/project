@@ -12,13 +12,13 @@
                 </div>
             </div>
             <div class="page-banner-shape-1">
-                <img src="assets/images/banner/banner-one-shape-1.png" alt="images">
+                <img src="{{asset('assets/images/banner/banner-one-shape-1.png')}}" alt="images">
             </div>
             <div class="page-banner-shape-2">
-                <img src="assets/images/banner/banner-one-shape-2.png" alt="images">
+                <img src="{{asset('assets/images/banner/banner-one-shape-2.png')}}" alt="images">
             </div>
             <div class="page-banner-shape-3">
-                <img src="assets/images/banner/banner-one-shape-3.png" alt="images">
+                <img src="{{asset('assets/images/banner/banner-one-shape-3.png')}}" alt="images">
             </div>
         </div>
         <!-- End Page Banner Area -->

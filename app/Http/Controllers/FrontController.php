@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Album;
 use App\Models\Event;
-use Illuminate\Http\Request;
+use App\Models\Comment;
+use App\Models\Partner;
 use App\Models\Coordonnee;
+use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function index(){
-        return view('frontend.index');
+        $partners = Partner::all();
+        $recentNews = News::orderBy('publication', 'desc')->take(3)->get();
+        $recentEvents = Event::with('categories')
+                        ->orderBy('start_date', 'desc')
+                        ->take(3)
+                        ->get();
+        $comments = Comment::with('user')
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+        return view('frontend.index', compact('recentNews', 'recentEvents', 'partners', 'comments'));
     }
     public function librariesByTheme($themeId)
     {
@@ -49,7 +60,11 @@ class FrontController extends Controller
     }
     public function events(){
         $events = Event::with('categories')->get();
-        return view('frontend.event', compact('events'));
+        $comments = Comment::with('user') // si tu as une relation user
+                        ->latest()
+                        ->take(4)
+                        ->get();
+        return view('frontend.event', compact('events', 'comments'));
     }
     public function eventsByCategory($categoryId) {
         $events = Event::whereHas('categories', function ($query) use ($categoryId) {
@@ -71,7 +86,11 @@ class FrontController extends Controller
                       ->orderBy('publication', 'desc')
                       ->take(2)
                       ->get();
-        return view('frontend.newsDetails' , compact('news', 'recentNews') );
+        $comments = Comment::with('user') // si tu as une relation user
+                        ->latest()
+                        ->take(4)
+                        ->get();              
+        return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
     
 

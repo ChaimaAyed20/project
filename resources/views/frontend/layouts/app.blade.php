@@ -77,25 +77,28 @@ function activeClass($pattern) {
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3">
-                        <div class="submenu-right-content">
-                            <ul>
-                                <li>
-                                    <p>Follow Us:</p>
-                                </li>
-                                @if($coordonnees->facebook)
-                                    <li><a href="{{ $coordonnees->facebook }}" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                                @endif
-                                @if($coordonnees->instagram)
-                                    <li><a href="{{ $coordonnees->instagram }}" target="_blank"><i class='bx bxl-instagram'></i></a></li>
-                                @endif
-                                @if($coordonnees->youtube)
-                                    <li><a href="{{ $coordonnees->youtube }}" target="_blank"><i class='bx bxl-youtube'></i></a></li>
-                                @endif
-                                @if($coordonnees->linkedin)
-                                    <li><a href="{{ $coordonnees->linkedin }}" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                                @endif
-                            </ul>
-                        </div>
+                        @if($coordonnees)
+    <div class="submenu-right-content">
+        <ul>
+            <li>
+                <p>Follow Us:</p>
+            </li>
+            @if($coordonnees->facebook)
+                <li><a href="{{ $coordonnees->facebook }}" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+            @endif
+            @if($coordonnees->instagram)
+                <li><a href="{{ $coordonnees->instagram }}" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+            @endif
+            @if($coordonnees->youtube)
+                <li><a href="{{ $coordonnees->youtube }}" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+            @endif
+            @if($coordonnees->linkedin)
+                <li><a href="{{ $coordonnees->linkedin }}" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+            @endif
+        </ul>
+    </div>
+@endif
+
                     </div>
                 </div>
             </div>

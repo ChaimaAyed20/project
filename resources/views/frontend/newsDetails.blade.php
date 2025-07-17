@@ -11,14 +11,15 @@
             </ul>
         </div>
     </div>
+    
     <div class="page-banner-shape-1">
-        <img src="assets/images/banner/banner-one-shape-1.png" alt="images">
+                <img src="{{asset('assets/images/banner/banner-one-shape-1.png')}}" alt="images">
     </div>
     <div class="page-banner-shape-2">
-        <img src="assets/images/banner/banner-one-shape-2.png" alt="images">
+                <img src="{{asset('assets/images/banner/banner-one-shape-2.png')}}" alt="images">
     </div>
     <div class="page-banner-shape-3">
-        <img src="assets/images/banner/banner-one-shape-3.png" alt="images">
+                <img src="{{asset('assets/images/banner/banner-one-shape-3.png')}}" alt="images">
     </div>
 </div>
 <!-- End Page Banner Area -->
@@ -187,6 +188,18 @@
                             </div>
                         </div>
                     </div>
+                    <!--<div class="row justify-content-center">
+            @if(isset($comments) && $comments->count())
+    @foreach($comments as $comment)
+        <div>{{ $comment->content }}</div>
+        <small>Par {{ $comment->user->name ?? 'Anonyme' }}</small>
+    @endforeach
+@else
+    <p>Pas de commentaires disponibles.</p>
+@endif
+
+        </div>
+    </div>-->
                     <form class="leave-comment">
                         <h3>أترك تعليقا</h3>
                         <div class="row">
