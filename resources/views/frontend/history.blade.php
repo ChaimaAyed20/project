@@ -55,62 +55,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What is the difference between the event manager and event planner?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What is the difference between organizer and Organiser
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFore">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">
-                                    What are the five stages of the event planning process?
-                                </button>
-                            </h2>
-                            <div id="collapseFore" class="accordion-collapse collapse" aria-labelledby="headingFore" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    What are the 3 important components of events planning?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                     <div class="blog-post-btn">
