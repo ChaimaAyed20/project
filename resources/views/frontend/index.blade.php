@@ -55,7 +55,7 @@
         <!-- End Banner area -->
 
         <!-- Start Conference Area -->
-        <div class="conference-area pt-100 pb-100">
+       <!-- <div class="conference-area pt-100 pb-100">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -124,11 +124,55 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- End Conference Area -->
+ @if($conferenceArea)
+<!-- Start Conference Area -->
+<div class="conference-area pt-100 pb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="single-conference-img">
+                    @if($conferenceArea->image1)
+                        <img src="{{ asset('storage/' . $conferenceArea->image1) }}" alt="Image 1">
+                    @endif
+                    @if($conferenceArea->image2)
+                        <div class="conference-img-2">
+                            <img src="{{ asset('storage/' . $conferenceArea->image2) }}" alt="Image 2">
+                        </div>
+                    @endif
+                    @if($conferenceArea->image3)
+                        <div class="conference-img-3">
+                            <img src="{{ asset('storage/' . $conferenceArea->image3) }}" alt="Image 3">
+                        </div>
+                    @endif
+                    <div class="conference-experience">
+                        <i class="flaticon-award"></i>
+                        <h5>35+ سنوات من الخبرة</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="single-conference-content">
+                    <div class="section-title left-title">
+                        <span class="top-title">{{ $conferenceArea->subtitle }}</span>
+                        <h2>{{ $conferenceArea->title }}</h2>
+                        <p>{{ $conferenceArea->short_description }}</p>
+                    </div>
+                    <div class="row">
+                        {!! $conferenceArea->description !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Conference Area -->
+@endif
+
 
         <!-- Start Conference Planning Area -->
-        <div class="conference-planning-area pb-70">
+        <!--<div class="conference-planning-area pb-70">
             <div class="container">
                 <div class="section-title3">
                     <span class="top-title3">المحاور</span>
@@ -170,7 +214,25 @@
                     </div>
                 </div>
             </div>
+        </div>-->
+      @if($planningSections)
+<!-- Start Conference Planning Area -->
+<div class="conference-planning-area pb-70">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-conference-planning-card">
+                    <i class="{{ $planningSections->icon }}"></i>
+                    <h3>{{ $planningSections->title }}</h3>
+                    <p>{{ $planningSections->description }}</p>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+<!-- End Conference Planning Area -->
+@endif
+
         <!-- End Conference Planning Area -->
          <!-- Start Blog Area -->
         <div class="blog-area pt-100 pb-100">

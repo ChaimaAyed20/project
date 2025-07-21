@@ -8,6 +8,8 @@ use App\Models\Event;
 use App\Models\Comment;
 use App\Models\Partner;
 use App\Models\Coordonnee;
+use App\Models\HomeSection;
+use App\Models\HomeInfo;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -22,7 +24,9 @@ class FrontController extends Controller
         $comments = Comment::with('user')
                         ->orderBy('created_at', 'desc')
                         ->get();
-        return view('frontend.index', compact('recentNews', 'recentEvents', 'partners', 'comments'));
+        $conferenceArea = HomeSection::orderBy('id')->skip(0)->take(1)->first();
+        $planningSections = HomeSection::orderBy('id')->skip(1)->take(1)->first();       
+        return view('frontend.index', compact('recentNews', 'recentEvents', 'partners', 'comments', 'conferenceArea', 'planningSections' ));
     }
     public function librariesByTheme($themeId)
     {
@@ -73,7 +77,8 @@ class FrontController extends Controller
     return view('frontend.event', compact('events', 'categoryId'));
     }
     public function eventDetails( $eventId){
-        return view('frontend.eventDetails');
+        $event = Event::findOrFail($eventId);
+        return view('frontend.eventDetails', compact('event'));
     }
     public function news(){
         $newsItems = News::with('author')->orderBy('publication', 'desc')->get();

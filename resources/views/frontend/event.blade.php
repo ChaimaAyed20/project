@@ -79,17 +79,33 @@
                 <h2>نحن ننظم فعاليات وبرامج سنوية</h2>
             </div>
 
-          <div class="row">
+         <div class="row">
     @forelse($events as $event)
+        @php
+            $cover = !empty($event->cover) && isset($event->cover[0])
+                ? $event->cover[0]
+                : 'default.jpg'; // assure-toi que default.jpg existe dans storage/events
+        @endphp
+
         <div class="col-lg-6 col-md-6 col-xl-6" data-cues="fadeIn" data-group="images" data-duration="1000">
             <div class="single-events-item">
                 <div class="row align-items-center">
                     <div class="col-lg-12 col-md-12">
                         <div class="events-content">
+
+                            {{-- Image de couverture --}}
+                            <div class="mb-3">
+                                <img src="{{ asset('storage/events/' . $cover) }}" alt="Event Image"
+                                     style="width:100%; max-height:300px; object-fit:cover;">
+                            </div>
+
+                            {{-- Titre et description --}}
                             <a href="{{ route('eventDetails', ['eventId' => $event->id]) }}">
                                 <h3>{{ $event->designation_ar }}</h3>
                             </a>
                             <p>{{ \Illuminate\Support\Str::limit($event->description_ar, 120) }}</p>
+
+                            {{-- Détails de l'événement --}}
                             <ul>
                                 <li class="events-list-cart">
                                     <img src="{{ asset('assets/images/blog/blog-icon-1.svg') }}" alt="icon">
@@ -111,6 +127,7 @@
         </div>
     @endforelse
 </div>
+
 
 
 
