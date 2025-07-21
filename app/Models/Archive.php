@@ -10,7 +10,7 @@ class Archive extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['designation_ar', 'description_ar', 'category_id'];
+    protected $fillable = ['titre', 'contenu', 'archive_category_id']; // selon tes colonnes
 
     public function category()
     {

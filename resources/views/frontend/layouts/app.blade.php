@@ -162,25 +162,25 @@ function activeClass($pattern) {
                                             </a>   
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'history']) }}" class="nav-link bg-border-top">تاريخ</a>     
+                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'history']) }}" class="nav-link bg-border-top">تاريخ</a>     
                                                 </li>
                                                <li class="nav-item">
-                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'geography']) }}" class="nav-link">جغرافيا</a>     
+                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'geography']) }}" class="nav-link">جغرافيا</a>     
                                                 </li>
                                                 <li class="nav-item"> 
-                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'quran']) }}">فلسطين في القرآن</a>      
+                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'quran']) }}" class="nav-link">فلسطين في القرآن</a>      
                                                 </li>
                                                 <li class="nav-item"> 
-                                                    <a href="{{ route('librariesByTheme', ['themeId' => 'sunnah']) }}">فلسطين في السّنة</a>      
+                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'sunnah']) }}" class="nav-link">فلسطين في السّنة</a>      
                                                 </li>
                                             </ul>
         
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('librariesByTheme', ['themeId' => 'digitalLibrary']) }}" class="nav-link">مكتبة رقمية</a>     
+                                            <a href="{{ route('archivesByCategory', ['categoryId' => 'digitalLibrary']) }}" class="nav-link">مكتبة رقمية</a>     
                                         </li> 
                                         <li class="nav-item">
-                                            <a href="{{ route('librariesByTheme', ['themeId' => 'references']) }}" class="nav-link bg-border-2">مراجع</a>     
+                                            <a href="{{ route('archivesByCategory', ['categoryId' => 'references']) }}" class="nav-link bg-border-2">مراجع</a>     
                                         </li> 
                                     </ul>
 

@@ -40,7 +40,7 @@
             <div class="col-lg-8">
                 <div class="some-faqs-area pt-100 pb-100">
                     <div class="single-faqs-content">
-                    <div class="accordion" id="accordionEvent">
+                    <!--<div class="accordion" id="accordionEvent">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -55,8 +55,30 @@
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="accordion" id="accordionEvent">
+                        @foreach ($archives as $archive)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ $archive->id }}">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse{{ $archive->id }}"
+                                            aria-expanded="false"
+                                            aria-controls="collapse{{ $archive->id }}">
+                                        {{ $archive->titre }}
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ $archive->id }}" class="accordion-collapse collapse"
+                                     aria-labelledby="heading{{ $archive->id }}" data-bs-parent="#accordionEvent">
+                                    <div class="accordion-body">
+                                        {!! nl2br(e($archive->contenu)) !!}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
+                    
+                    </div>
                     <div class="blog-post-btn">
                         <a href="#" class="default-btn">تحميل المزيد<i class="bx bx-plus"></i></a>
                     </div>

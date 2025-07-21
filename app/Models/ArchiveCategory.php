@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ArchiveCategory extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = ['designation_ar'];
 
     public function archives()

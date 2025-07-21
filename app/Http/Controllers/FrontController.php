@@ -9,6 +9,8 @@ use App\Models\Comment;
 use App\Models\Partner;
 use App\Models\Coordonnee;
 use Illuminate\Http\Request;
+use App\Models\ArchiveCategory;
+
 
 class FrontController extends Controller
 {
@@ -93,6 +95,33 @@ class FrontController extends Controller
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
     
+    public function archivesByCategory($categoryId)
+    {
+        // Tu peux utiliser un mapping si categoryId est une "clé logique"
+        $categories = [
+            'history' => 'تاريخ',
+            'geography' => 'جغرافيا',
+            'quran' => 'فلسطين في القرآن',
+            'sunnah' => 'فلسطين في السّنة',
+        ];
+
+        if (!array_key_exists($categoryId, $categories)) {
+            abort(404);
+        }
+
+        // Trouver la catégorie correspondante par son nom arabe
+        $category = ArchiveCategory::where('designation_ar', $categories[$categoryId])->first();
+
+        if (!$category) {
+            abort(404); // Si la catégorie n’existe pas
+        }
+
+        // Récupérer les archives liées à cette catégorie
+        $archives = $category->archives()->latest()->get();
+
+        return view('frontend.history', compact('archives', 'categoryId'));
+
+    }
 
 
 }
