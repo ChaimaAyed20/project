@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->boolean('photo')->default(false);
             $table->boolean('video')->default(false);
+            $table->timestamps();
         });
         
     }
