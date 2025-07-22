@@ -24,98 +24,40 @@
         <!-- End Page Banner Area -->
 
         <!-- Start Event Photo Area -->
-        <div class="events-gallery-area pt-100 pb-100">
-            <div class="container">
-                <div class="section-title">
-                    <span class="top-title">اليك بعض الصور من فعالياتنا و مؤتمراتنا السابقة </span>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-1.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-1"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-2.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-2"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-3.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-3"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-4.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-4"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-5.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-5"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-6.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-6"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-7.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
-                        <div class="event-gallery-img">
-                            <div class="gallery-img gallery-img-7"></div>
-                            <div class="gallery-icon">
-                                <a data-fancybox="gallery" href="assets/images/gallery/event-photo-8.jpg">
-                                    <i class="bx bxs-plus-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-btn">
-                    <a href="#" class="default-btn">تحميل المزيد <i class="bx bx-plus"></i></a>
-                </div>
-            </div>
+<div class="events-gallery-area pt-100 pb-100">
+    <div class="container">
+        <div class="section-title">
+            <span class="top-title">اليك بعض الصور من فعالياتنا و مؤتمراتنا السابقة </span>
         </div>
-        <!-- End Event Photo Area -->
+        <div class="row">
+            @foreach ($galleries as $gallery)
+                @php
+                    $images = json_decode($gallery->images, true);
+                @endphp
+
+                @if(is_array($images))
+                    @foreach ($images as $image)
+                        <div class="col-lg-3 col-md-6" data-cues="fadeIn" data-duration="1000" data-group="images">
+                            <div class="event-gallery-img">
+                                <div class="gallery-img" style="background-image: url('{{ asset('storage/' . $image) }}'); background-size: cover; background-position: center; height: 250px;"></div>
+                                <div class="gallery-icon">
+                                    <a data-fancybox="gallery" href="{{ asset('storage/' . $image) }}">
+                                        <i class="bx bxs-plus-circle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            @endforeach
+        </div>
+
+        <div class="gallery-btn">
+            <a href="#" class="default-btn">تحميل المزيد <i class="bx bx-plus"></i></a>
+        </div>
+    </div>
+</div>
+<!-- End Event Photo Area -->
+
 
 @stop

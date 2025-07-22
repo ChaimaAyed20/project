@@ -95,7 +95,10 @@
                                 <div class="col-lg-6">
                                     <div class="conference-item">
                                         <div class="conference-icon">
-                                            <i class="{{ $icon }}"></i>
+                                            <div class="conference-icon">
+    <img src="{{ asset('storage/' . $icon) }}" alt="{{ $iconTitle }}" style="width: 40px; height: 40px;">
+</div>
+
                                         </div>
                                         <h3>{{ $iconTitle }}</h3>
                                         <p>{{ $iconDesc }}</p>
