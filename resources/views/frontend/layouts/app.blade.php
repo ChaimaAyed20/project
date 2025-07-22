@@ -442,6 +442,8 @@ function activeClass($pattern) {
         <script src="{{asset('asset(s/js/subscribe-custom.js')}}"></script>
         <script src="{{asset('asset(s/js/contact-form-script.js')}}"></script>
         <script src="{{asset('assets/js/custom.js')}}"></script>
+        <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')}}"></script>
+
 
     </body>
 </html>

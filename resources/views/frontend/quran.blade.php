@@ -5,10 +5,10 @@
         <div class="page-banner-area page-pricing-table">
             <div class="container-fluid">
                 <div class="single-page-banner-content">
-                    <h1>في القرآن و في السّنة</h1>
+                    <h1>في القرآن</h1>
                     <ul>
                         <li><a href="index.html">المباحث</a></li>
-                        <li>فلسطين في القرآن و السّنة</li>
+                        <li>فلسطين في القرآن</li>
                     </ul>
                 </div>
             </div>
@@ -38,83 +38,37 @@
             <div class="col-lg-8">
                 <div class="some-faqs-area pt-100 pb-100">
                     <div class="single-faqs-content">
-                    <div class="accordion" id="accordionEvent">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What is the difference between event planner and event organizer?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                    come learn grow scrape their knees try new things to be vulnerable fore and to
-                                    have epic adventures together this time both in-person.</p>
+                        <div class="accordion" id="accordionEvent">
+                            @forelse ($archives as $archive)
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading{{ $archive->id }}">
+                                        <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button" 
+                                                data-bs-toggle="collapse" 
+                                                data-bs-target="#collapse{{ $archive->id }}" 
+                                                aria-expanded="{{ $loop->first ? 'true' : 'false' }}" 
+                                                aria-controls="collapse{{ $archive->id }}">
+                                            {{ $archive->designation_ar }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse{{ $archive->id }}" 
+                                         class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" 
+                                         aria-labelledby="heading{{ $archive->id }}" 
+                                         data-bs-parent="#accordionEvent">
+                                        <div class="accordion-body">
+                                            {!! nl2br(e($archive->description_ar)) !!}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What is the difference between the event manager and event planner?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What is the difference between organizer and Organiser
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFore">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">
-                                    What are the five stages of the event planning process?
-                                </button>
-                            </h2>
-                            <div id="collapseFore" class="accordion-collapse collapse" aria-labelledby="headingFore" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    What are the 3 important components of events planning?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionEvent">
-                                <div class="accordion-body">
-                                    <p>We’re inviting the top creatives in the tech industry from all over the world
-                                        come learn grow scrape their knees try new things to be vulnerable fore and to
-                                        have epic adventures together this time both in-person.</p>
-                                </div>
-                            </div>
-                        </div>
+                            @empty
+                                <p class="text-center">لا توجد بيانات لعرضها.</p>
+                            @endforelse
+                        </div>                        
                     </div>
                 </div>
                     <div class="blog-post-btn">
                         <a href="#" class="default-btn">تحميل المزيد<i class="bx bx-plus"></i></a>
                     </div>
-                </div>
+                
             </div>
 
             <!-- Colonne droite : barre latérale -->

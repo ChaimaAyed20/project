@@ -102,31 +102,33 @@ class FrontController extends Controller
     
     public function archivesByCategory($categoryId)
     {
-        // Tu peux utiliser un mapping si categoryId est une "clé logique"
         $categories = [
             'history' => 'تاريخ',
             'geography' => 'جغرافيا',
             'quran' => 'فلسطين في القرآن',
             'sunnah' => 'فلسطين في السّنة',
+            'digitalLibrary' => 'مكتبة رقمية',
+            'references' => 'مراجع'
         ];
 
         if (!array_key_exists($categoryId, $categories)) {
-            abort(404);
+            abort(404); // Si le slug est invalide
         }
 
-        // Trouver la catégorie correspondante par son nom arabe
+        // Chercher la catégorie par son nom arabe
         $category = ArchiveCategory::where('designation_ar', $categories[$categoryId])->first();
 
         if (!$category) {
-            abort(404); // Si la catégorie n’existe pas
+            abort(404); // Si la catégorie n’existe pas en base
         }
 
-        // Récupérer les archives liées à cette catégorie
+        // Récupérer les archives associées
         $archives = $category->archives()->latest()->get();
 
-        return view('frontend.history', compact('archives', 'categoryId','category'));
-
+        // Vue dynamique basée sur le slug (ex: frontend.history, frontend.geography, etc.)
+        return view("frontend.$categoryId", compact('archives', 'categoryId', 'category'));
     }
+
 
 
 }
