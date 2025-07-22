@@ -7,10 +7,12 @@ use App\Models\Album;
 use App\Models\Event;
 use App\Models\Comment;
 use App\Models\Partner;
+use App\Models\HomeInfo;
 use App\Models\Coordonnee;
 use App\Models\HomeSection;
-use App\Models\HomeInfo;
 use Illuminate\Http\Request;
+use App\Models\ArchiveCategory;
+
 
 class FrontController extends Controller
 {
@@ -25,8 +27,8 @@ class FrontController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->get();
         $conferenceArea = HomeSection::orderBy('id')->skip(0)->take(1)->first();
-        $planningSections = HomeSection::orderBy('id')->skip(1)->take(1)->first();       
-        return view('frontend.index', compact('recentNews', 'recentEvents', 'partners', 'comments', 'conferenceArea', 'planningSections' ));
+        $planningSections = HomeSection::orderBy('id')->skip(1)->take(1)->first();      
+        return view('frontend.index', compact('recentNews', 'recentEvents', 'partners', 'comments','conferenceArea', 'planningSections' ));
     }
     public function librariesByTheme($themeId)
     {
@@ -98,6 +100,33 @@ class FrontController extends Controller
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
     
+    public function archivesByCategory($categoryId)
+    {
+        // Tu peux utiliser un mapping si categoryId est une "clé logique"
+        $categories = [
+            'history' => 'تاريخ',
+            'geography' => 'جغرافيا',
+            'quran' => 'فلسطين في القرآن',
+            'sunnah' => 'فلسطين في السّنة',
+        ];
+
+        if (!array_key_exists($categoryId, $categories)) {
+            abort(404);
+        }
+
+        // Trouver la catégorie correspondante par son nom arabe
+        $category = ArchiveCategory::where('designation_ar', $categories[$categoryId])->first();
+
+        if (!$category) {
+            abort(404); // Si la catégorie n’existe pas
+        }
+
+        // Récupérer les archives liées à cette catégorie
+        $archives = $category->archives()->latest()->get();
+
+        return view('frontend.history', compact('archives', 'categoryId','category'));
+
+    }
 
 
 }

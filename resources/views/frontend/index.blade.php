@@ -53,115 +53,58 @@
             </div>
         </div>
         <!-- End Banner area -->
-
-        <!-- Start Conference Area -->
-       <!-- <div class="conference-area pt-100 pb-100">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="single-conference-img">
-                            <img src="{{ asset('assets/images/conference/conference-img-3.jpg') }}" alt="images" data-cue="slideInDown" data-duration="2000">
-                            <div class="conference-img-2" data-cue="slideInLeft" data-duration="2000">
-                                <img src="assets/images/conference/conference-img-1.jpg" alt="images" style="width: 312px;">
-                            </div>
-                            <div class="conference-img-3" data-cue="slideInUp" data-duration="2000">
-                                <img src="assets/images/conference/conference-img-2.jpg" alt="images">
-                            </div>
-                            <div class="conference-experience" data-cue="slideInUp" data-duration="2000">
-                                <i class="flaticon-award"></i>
-                                <h5>35+ Years Experience Of Speakers</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single-conference-content" data-cue="slideInRight">
-                            <div class="section-title left-title">
-                                <span class="top-title">رؤيتنا</span>
-                                <h2>الجمعية التونسية للمعارف الفلسطينية</h2>
-                                <p>There are many variations of passages of Lorem Ipsum available but the majority have
-                                form by injected humour or words which don't look believable.</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="conference-item">
-                                        <div class="conference-icon">
-                                            <i class="flaticon-clock"></i>
-                                        </div>
-                                        <h3>موعد البدء</h3>
-                                        <p>Tuesday – Friday 27 – 30 June 2024</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="conference-item">
-                                        <div class="conference-icon">
-                                            <i class="flaticon-map-location"></i>
-                                        </div>
-                                        <h3>الموقع</h3>
-                                        <p>Mueensbay Ball 471 Dickel Yiamond Road, USA</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="conference-item">
-                                        <div class="conference-icon">
-                                            <i class="flaticon-employee"></i>
-                                        </div>
-                                        <h3>المتحدث التحفيزي</h3>
-                                        <p>There are many variation but majority have suffered</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="conference-item">
-                                        <div class="conference-icon">
-                                            <i class="flaticon-sponsor"></i>
-                                        </div>
-                                        <h3>الراعي الدولي</h3>
-                                        <p>There are many variation but majority have suffered</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-        <!-- End Conference Area -->
- @if($conferenceArea)
+@if($conferenceArea)
 <!-- Start Conference Area -->
 <div class="conference-area pt-100 pb-100">
     <div class="container">
         <div class="row align-items-center">
+            <!-- Images -->
             <div class="col-lg-6">
                 <div class="single-conference-img">
-                    @if($conferenceArea->image1)
-                        <img src="{{ asset('storage/' . $conferenceArea->image1) }}" alt="Image 1">
-                    @endif
-                    @if($conferenceArea->image2)
-                        <div class="conference-img-2">
-                            <img src="{{ asset('storage/' . $conferenceArea->image2) }}" alt="Image 2">
-                        </div>
-                    @endif
-                    @if($conferenceArea->image3)
-                        <div class="conference-img-3">
-                            <img src="{{ asset('storage/' . $conferenceArea->image3) }}" alt="Image 3">
-                        </div>
-                    @endif
-                    <div class="conference-experience">
+                    <img src="{{ asset('storage/' . $conferenceArea->image1) }}" alt="image1" data-cue="slideInDown" data-duration="2000">
+                    <div class="conference-img-2" data-cue="slideInLeft" data-duration="2000">
+                        <img src="{{ asset('storage/' . $conferenceArea->image2) }}" alt="image2" style="width: 312px;">
+                    </div>
+                    <div class="conference-img-3" data-cue="slideInUp" data-duration="2000">
+                        <img src="{{ asset('storage/' . $conferenceArea->image3) }}" alt="image3">
+                    </div>
+                    <div class="conference-experience" data-cue="slideInUp" data-duration="2000">
                         <i class="flaticon-award"></i>
-                        <h5>35+ سنوات من الخبرة</h5>
+                        <h5>{{ $conferenceArea->subtitle }}</h5>
                     </div>
                 </div>
             </div>
+
+            <!-- Contenu texte -->
             <div class="col-lg-6">
-                <div class="single-conference-content">
+                <div class="single-conference-content" data-cue="slideInRight">
                     <div class="section-title left-title">
-                        <span class="top-title">{{ $conferenceArea->subtitle }}</span>
+                        <span class="top-title">رؤيتنا</span>
                         <h2>{{ $conferenceArea->title }}</h2>
                         <p>{{ $conferenceArea->short_description }}</p>
                     </div>
+
                     <div class="row">
-                        {!! $conferenceArea->description !!}
+                        @for ($i = 1; $i <= 4; $i++)
+                            @php
+                                $icon = $conferenceArea->{'icon' . $i};
+                                $iconTitle = $conferenceArea->{'icon' . $i . '_title'};
+                                $iconDesc = $conferenceArea->{'icon' . $i . '_description'};
+                            @endphp
+                            @if($icon || $iconTitle || $iconDesc)
+                                <div class="col-lg-6">
+                                    <div class="conference-item">
+                                        <div class="conference-icon">
+                                            <i class="{{ $icon }}"></i>
+                                        </div>
+                                        <h3>{{ $iconTitle }}</h3>
+                                        <p>{{ $iconDesc }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endfor
                     </div>
+
                 </div>
             </div>
         </div>
@@ -170,70 +113,66 @@
 <!-- End Conference Area -->
 @endif
 
-
-        <!-- Start Conference Planning Area -->
-        <!--<div class="conference-planning-area pb-70">
-            <div class="container">
-                <div class="section-title3">
-                    <span class="top-title3">المحاور</span>
-                    <h2>القضية الفلسطينية: معارف ومحاور</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInLeft" data-duration="1000">
-                        <div class="single-conference-card">
-                            <div class="planning-icon">
-                                <i class="flaticon-networking"></i>
-                            </div>
-                            <h3>Networking People</h3>
-                            <p>Get the most of reduction in your us
-                            operating costs for the whole which of
-                            amazing ui/ux experiences.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInDown" data-duration="1000">
-                        <div class="single-conference-card">
-                            <div class="planning-icon">
-                                <i class="flaticon-ownership"></i>
-                            </div>
-                            <h3>Business Owners</h3>
-                            <p>Get the most of reduction in your us
-                            operating costs for the whole which of
-                            amazing ui/ux experiences.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInRight" data-duration="1000">
-                        <div class="single-conference-card">
-                            <div class="planning-icon">
-                                <i class="flaticon-promoted"></i>
-                            </div>
-                            <h3>Promote Reunions</h3>
-                            <p>Get the most of reduction in your us
-                            operating costs for the whole which of
-                            amazing ui/ux experiences.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-      @if($planningSections)
-<!-- Start Conference Planning Area -->
+<!--start conferance planning area-->
+@if($planningSections)
 <div class="conference-planning-area pb-70">
     <div class="container">
+        <div class="section-title3">
+            <span class="top-title3">المحاور</span>
+            <h2>{{ $planningSections->title }}</h2>
+        </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-conference-planning-card">
-                    <i class="{{ $planningSections->icon }}"></i>
-                    <h3>{{ $planningSections->title }}</h3>
-                    <p>{{ $planningSections->description }}</p>
+
+            <!-- Icon 1 -->
+            <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInLeft" data-duration="1000">
+                <div class="single-conference-card">
+                    <div class="planning-icon">
+                        <i class="{{ $planningSections->icon1 }}"></i>
+                    </div>
+                    <h3>{{ $planningSections->icon1_title }}</h3>
+                    <p>{{ $planningSections->icon1_description }}</p>
                 </div>
             </div>
+
+            <!-- Icon 2 -->
+            <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInDown" data-duration="1000">
+                <div class="single-conference-card">
+                    <div class="planning-icon">
+                        <i class="{{ $planningSections->icon2 }}"></i>
+                    </div>
+                    <h3>{{ $planningSections->icon2_title }}</h3>
+                    <p>{{ $planningSections->icon2_description }}</p>
+                </div>
+            </div>
+
+            <!-- Icon 3 -->
+            <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInRight" data-duration="1000">
+                <div class="single-conference-card">
+                    <div class="planning-icon">
+                        <i class="{{ $planningSections->icon3 }}"></i>
+                    </div>
+                    <h3>{{ $planningSections->icon3_title }}</h3>
+                    <p>{{ $planningSections->icon3_description }}</p>
+                </div>
+            </div>
+
+            <!-- Icon 4 -->
+            <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInUp" data-duration="1000">
+                <div class="single-conference-card">
+                    <div class="planning-icon">
+                        <i class="{{ $planningSections->icon4 }}"></i>
+                    </div>
+                    <h3>{{ $planningSections->icon4_title }}</h3>
+                    <p>{{ $planningSections->icon4_description }}</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
-<!-- End Conference Planning Area -->
 @endif
-
-        <!-- End Conference Planning Area -->
+<!-- end conferance plannig area-->
+       
          <!-- Start Blog Area -->
         <div class="blog-area pt-100 pb-100">
             <div class="container">

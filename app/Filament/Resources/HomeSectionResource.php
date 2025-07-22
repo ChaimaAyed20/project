@@ -9,10 +9,8 @@ use Filament\Tables\Table;
 use App\Models\HomeSection;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Textarea;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\HomeSectionResource\Pages;
@@ -24,60 +22,51 @@ class HomeSectionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                TextInput::make('title')
-                    ->label('Titre')
-                    ->required(),
+    public static function form(Forms\Form $form): Forms\Form
+{
+    return $form->schema([
+        TextInput::make('title')->required(),
+        TextInput::make('subtitle'),
+        Textarea::make('short_description'),
 
-                TextInput::make('subtitle')
-                    ->label('Sous-titre'),
+        FileUpload::make('image1')->image(),
+        FileUpload::make('image2')->image(),
+        FileUpload::make('image3')->image(),
 
-                Textarea::make('short_description')
-                    ->label('Description courte'),
+        TextInput::make('icon1')->label('Icon 1 (ex: nom de classe ou url)'),
+        TextInput::make('icon1_title'),
+        Textarea::make('icon1_description'),
 
-                RichEditor::make('description')
-                    ->label('Description complète'),
+        TextInput::make('icon2'),
+        TextInput::make('icon2_title'),
+        Textarea::make('icon2_description'),
 
-                TextInput::make('icon')
-                    ->label('Icône (pour planning)')
-                    ->placeholder('ex: flaticon-calendar'),
+        TextInput::make('icon3'),
+        TextInput::make('icon3_title'),
+        Textarea::make('icon3_description'),
 
-                FileUpload::make('image1')
-                    ->label('Image 1')
-                    ->image()
-                    ->directory('home'),
+        TextInput::make('icon4'),
+        TextInput::make('icon4_title'),
+        Textarea::make('icon4_description'),
+    ]);
+}
 
-                FileUpload::make('image2')
-                    ->label('Image 2')
-                    ->image()
-                    ->directory('home'),
-
-                FileUpload::make('image3')
-                    ->label('Image 3')
-                    ->image()
-                    ->directory('home'),
-            ]);
-    }    
-
-     public static function table(Table $table): Table
+    public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('id')->sortable(),
-                TextColumn::make('title')->label('Titre')->searchable(),
-                TextColumn::make('subtitle')->label('Sous-titre')->limit(20),
-                TextColumn::make('created_at')->label('Créé le')->date(),
+                //
             ])
-            ->defaultSort('id', 'asc')
+            ->filters([
+                //
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 
