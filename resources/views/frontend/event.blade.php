@@ -1,7 +1,7 @@
 ﻿@extends('frontend.layouts.app')
 @section('content')
 
-            <div class="others-option-for-responsive"> 
+           <!-- <div class="others-option-for-responsive"> 
                 <div class="container">
                     <div class="dot-menu">
                         <div class="inner">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>    
-        </div>
+        </div>-->
         <!-- End Menubar Area -->
 
         <!-- Start Page Banner Area -->

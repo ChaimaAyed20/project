@@ -3956,20 +3956,19 @@ Start Page Banner Area
 .page-banner-area {
   background-image: url(../images/banner/tunisie_palestine.png);
   background-size: cover;
-  height: 300px;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 60px;
+  padding-bottom: 0px;
   width: auto;
   height: 100%;
   z-index: 1;
 }
 .page-banner-area.gallery-pages {
-  background-image: url(../images/page/page-banner-bg-img-7.png);
-  height: 300px;
+  background-image: url(../images/banner/banneerr.png);
+  height: 180px;
 }
 .page-banner-area.gallery-pages::after {
   content: "";
@@ -3984,8 +3983,8 @@ Start Page Banner Area
   background: linear-gradient(90deg, rgba(17, 17, 17, 0.88) 34.9%, rgba(17, 17, 17, 0) 69.43%);
 }
 .page-banner-area.page-testimonials {
-  background-image: url(../images/banner/ref.png);
-  height: 300px;
+  background-image: url(../images/banner/banneerr.png);
+  height: 180px;
 }
 .page-banner-area.page-testimonials::after {
   content: "";
@@ -4016,11 +4015,11 @@ Start Page Banner Area
 }
 .page-banner-area.events-pages {
   background-image: url(../images/page/page-banner-bg-img-2.jpg);
-  height: 300px;
+  height: 180px;
 }
 .page-banner-area.events-pages.event-details {
-  background-image: url(../images/banner/event_photo.jpg);
-  height: 300px;
+  background-image: url(../images/banner/banneerr.png);
+  height: 180px;
 
 }
 .page-banner-area.events-pages::after {
@@ -4036,8 +4035,8 @@ Start Page Banner Area
   background: linear-gradient(90deg, rgba(17, 17, 17, 0) 10%, rgba(17, 17, 17, 0.88) 55%);
 }
 .page-banner-area.page-pricing-table {
-  background-image: url(../images/banner/تارييخ.png);
-  height: 100px;
+  background-image: url(../images/banner/banneerr.png);
+  height: 180px;
   background-size: cover;      /* L’image couvre toute la bannière */
   background-position: center;}
 
@@ -4058,7 +4057,7 @@ Start Page Banner Area
 }
 .page-banner-area.tunisie-palestine{
   background-image: url(../images/banner/tunisie_palestine.png);
-  height: 300px;
+  height: 180px;
 }
 .page-banner-area.tunisie-palestine::after {
   content: "";
