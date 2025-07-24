@@ -99,35 +99,6 @@ class FrontController extends Controller
                         ->get();              
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
-    
-    public function archivesByCategory($categoryId)
-    {
-        $categories = [
-            'history' => 'تاريخ',
-            'geography' => 'جغرافيا',
-            'quran' => 'فلسطين في القرآن',
-            'sunnah' => 'فلسطين في السّنة',
-            'digitalLibrary' => 'مكتبة رقمية',
-            'references' => 'مراجع'
-        ];
-
-        if (!array_key_exists($categoryId, $categories)) {
-            abort(404); // Si le slug est invalide
-        }
-
-        // Chercher la catégorie par son nom arabe
-        $category = ArchiveCategory::where('designation_ar', $categories[$categoryId])->first();
-
-        if (!$category) {
-            abort(404); // Si la catégorie n’existe pas en base
-        }
-
-        // Récupérer les archives associées
-        $archives = $category->archives()->latest()->get();
-
-        // Vue dynamique basée sur le slug (ex: frontend.history, frontend.geography, etc.)
-        return view("frontend.$categoryId", compact('archives', 'categoryId', 'category'));
-    }
 
 
 
