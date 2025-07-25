@@ -20,7 +20,7 @@ class Comment extends Model
 
     public function topic()
     {
-        return $this->belongsTo(Topic::class);
+        return $this->belongsTo(News::class, 'topic_id');
     }
 
     // Self-referencing for replies

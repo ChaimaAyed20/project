@@ -121,123 +121,73 @@
                             </ul>
                         </div>
                     </div>
-                    <h3>التعليقات</h3>
-                    <div class="blog-details-comment">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="comment-text">
-                                    <img src="assets/images/blog/blog-details-2.jpg" alt="images">
-                                    <div class="client-name">
-                                        <h4>Trever Barton</h4>
-                                        <p>July 7, 2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <p>Had a fantastic time at Genes Expo got to meet
-                                of great people and hear some amazin</p>
-                            </div>
-                            <div class="col-lg-2 col-md-2">
-                                <div class="reply-btn">
-                                    <a href="#" class="reply">أضف ردّاً</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-details-comment">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="comment-text">
-                                    <img src="assets/images/blog/blog-details-3.jpg" alt="images">
-                                    <div class="client-name">
-                                        <h4>Jaunita Lowe</h4>
-                                        <p>July 12, 2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <p>Had a fantastic time at Genes Expo got to meet
-                                of great people and hear some amazin</p>
-                            </div>
-                            <div class="col-lg-2 col-md-2">
-                                <div class="reply-btn">
-                                    <a href="#" class="reply">أضف ردّاً</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-details-comment">
-                        <div class="row align-items-center">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="comment-text">
-                                    <img src="assets/images/blog/blog-details-4.jpg" alt="images">
-                                    <div class="client-name">
-                                        <h4>Demond Muller</h4>
-                                        <p>July 18, 2024</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <p>Had a fantastic time at Genes Expo got to meet
-                                of great people and hear some amazin</p>
-                            </div>
-                            <div class="col-lg-2 col-md-2">
-                                <div class="reply-btn">
-                                    <a href="#" class="reply">أضف ردّاً</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div class="row justify-content-center">
-            @if(isset($comments) && $comments->count())
+               <h3>التعليقات</h3>
+
+@if(isset($comments) && $comments->count())
     @foreach($comments as $comment)
-        <div>{{ $comment->content }}</div>
-        <small>Par {{ $comment->user->name ?? 'Anonyme' }}</small>
+        <div class="blog-details-comment">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-4">
+                    <div class="comment-text">
+                        {{-- Image par défaut si l’utilisateur n’en a pas --}}
+                        <img src="{{ asset('assets/images/blog/blog-details-2.jpg') }}" alt="avatar">
+                        <div class="client-name">
+                            <h4>{{ $comment->user->name ?? 'زائر' }}</h4>
+                            <p>{{ \Carbon\Carbon::parse($comment->created_at)->format('d-m-Y') }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <p>{{ $comment->content }}</p>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <div class="reply-btn">
+                        <a href="#" class="reply">أضف ردّاً</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     @endforeach
 @else
-    <p>Pas de commentaires disponibles.</p>
+    <p>لا توجد تعليقات بعد.</p>
 @endif
+<form class="leave-comment" method="POST" action="{{ route('comments.store') }}">
+    @csrf
+    <input type="hidden" name="topic_id" value="{{ $news->id }}">
 
+    <h3>أترك تعليقا</h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="الإسم" name="name" value="{{ Auth::check() ? Auth::user()->name : '' }}" {{ Auth::check() ? 'readonly' : '' }} required>
+            </div>
         </div>
-    </div>-->
-                    <form class="leave-comment">
-                        <h3>أترك تعليقا</h3>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="الإسم">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="البريد الإلكتروني">
-                                </div>
-                            </div>
-                            <!--
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Website">
-                                </div>
-                            </div>
-                            -->
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="أترك تعليقك" rows="5"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            احفظ اسمي وبريدي الإلكتروني في هذا المتصفح لاستخدامها في المرة القادمة التي أعلق فيها.
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="default-btn">نشر التعليق<i class="bx bx-plus"></i></button>
-                    </form>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="البريد الإلكتروني" name="email" value="{{ Auth::check() ? Auth::user()->email : '' }}" {{ Auth::check() ? 'readonly' : '' }} required>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <textarea class="form-control" placeholder="أترك تعليقك" rows="5" name="content" required></textarea>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        احفظ اسمي وبريدي الإلكتروني في هذا المتصفح لاستخدامها في المرة القادمة التي أعلق فيها.
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="default-btn">نشر التعليق<i class="bx bx-plus"></i></button>
+</form>
+
                 </div>
             </div>
             <div class="col-lg-4">

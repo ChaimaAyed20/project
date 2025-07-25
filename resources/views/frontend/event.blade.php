@@ -67,9 +67,9 @@
             @if(isset($categoryId))
                 @php
                     $categoryNames = [
-                        1 => 'تونسية',
-                        2 => 'عربية',
-                        3 => 'عالمية',
+                        6 => 'تونسية',
+                        7 => 'عربية',
+                        8 => 'عالمية',
                     ];
                 @endphp
             @endif
@@ -127,36 +127,45 @@
         </div>
     @endforelse
 </div>
-
-
-
-
-
-
    </div>
     </div>
     <!-- End Events Pages Area -->
-
-    <!-- Start Our Testimonials Area  -->
-    <div class="testimonials-area pb-70">
+ <!-- Start Our Testimonials Area  -->
+<div class="testimonials-area pb-70">
     <div class="container">
         <div class="section-title3">
             <span class="top-title3">آراء العملاء</span>
             <h2>ماذا قال زوارنا عنا؟</h2>
         </div>
         <div class="row justify-content-center">
-            @if(isset($comments) && $comments->count())
-    @foreach($comments as $comment)
-        <div>{{ $comment->content }}</div>
-        <small>Par {{ $comment->user->name ?? 'Anonyme' }}</small>
-    @endforeach
-@else
-    <p>Pas de commentaires disponibles.</p>
-@endif
-
+            @if(isset($comments))
+            @foreach($comments as $index => $comment)
+                @php
+                    $animations = ['slideInLeft', 'slideInUp', 'slideInDown', 'slideInRight'];
+                    $animation = $animations[$index % count($animations)];
+                @endphp
+                <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6" data-cue="{{ $animation }}">
+                    <div class="testimonials-card">
+                        <span>{{ $comment->created_at->format('d - F - Y') }}</span>
+                        <p>{{ \Illuminate\Support\Str::limit($comment->content, 180) }}</p>
+                        <div class="testimonials-cliend">
+                            <a href="#">
+                                <img src="{{ asset('assets/images/default-user.png') }}" alt="user">
+                            </a>
+                            <h3>{{ $comment->user->name ?? 'مستخدم مجهول' }}</h3>
+                            <p>زائر</p>
+                        </div>
+                        <div class="testimonials-icon">
+                            <img src="{{ asset('assets/images/testimonials/testimonials-shape.svg') }}" alt="shape">
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            @endif
         </div>
     </div>
 </div>
+<!-- End Our Testimonials Area  -->
 
-    <!-- End Our Testimonials Area  -->
+
 @stop

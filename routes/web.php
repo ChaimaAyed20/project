@@ -17,3 +17,6 @@ Route::get('/events/{categoryId}', [FrontController::class, 'eventsByCategory'])
 Route::get('/event/{eventId}', [FrontController::class, 'eventDetails'])->name('eventDetails');
 Route::get('/news', [FrontController::class, 'news'])->name('news');
 Route::get('/newsDetails/{newsId}', [FrontController::class, 'newsDetails'])->name('newsDetails');
+Route::post('/comments', [FrontController::class, 'store'])->name('comments.store');
+Route::get('/reset-category-id', [FrontController::class, 'resetAutoIncrement']);
+

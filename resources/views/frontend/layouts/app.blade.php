@@ -208,13 +208,13 @@ function activeClass($pattern) {
                                             
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 1])}}" class="nav-link bg-border-top">تونسية</a>     
+                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 6])}}" class="nav-link bg-border-top">تونسية</a>     
                                                 </li>
                                                <li class="nav-item">
-                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 2])}}" class="nav-link">عربية</a>     
+                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 7])}}" class="nav-link">عربية</a>     
                                                 </li>
                                                     <li class="nav-item"> 
-                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 3])}}">عالمية</a>      
+                                                    <a href="{{route('eventsByCategory' , ['categoryId' => 8])}}">عالمية</a>      
                                                 </li>  
                                             </ul>
         
@@ -426,21 +426,21 @@ function activeClass($pattern) {
 
         <!--=== Link Of JS Files ===-->
         <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.min.js"></script>
-        <script src="{{asset('asset(s/js/meanmenu.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/bootstrap.bundle.min.js')}}"></script> 
-        <script src="{{asset('asset(s/js/bootstrap-datepicker.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/downCount.js')}}"></script>
-        <script src="{{asset('asset(s/js/scrollCue.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/fancybox.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/appear.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/odometer.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/magnific-popup.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/owl.carousel.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/parallax.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/ajaxchimp.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/form-validator.min.js')}}"></script>
-        <script src="{{asset('asset(s/js/subscribe-custom.js')}}"></script>
-        <script src="{{asset('asset(s/js/contact-form-script.js')}}"></script>
+        <script src="{{asset('assets/js/meanmenu.min.js')}}"></script>
+        <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script> 
+        <script src="{{asset('assets/js/bootstrap-datepicker.min.js')}}"></script>
+        <script src="{{asset('assets/js/downCount.js')}}"></script>
+        <script src="{{asset('assets/js/scrollCue.min.js')}}"></script>
+        <script src="{{asset('assets/js/fancybox.min.js')}}"></script>
+        <script src="{{asset('assets/js/appear.min.js')}}"></script>
+        <script src="{{asset('assets/js/odometer.min.js')}}"></script>
+        <script src="{{asset('assets/js/magnific-popup.min.js')}}"></script>
+        <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('assets/js/parallax.min.js')}}"></script>
+        <script src="{{asset('assets/js/ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('assets/js/form-validator.min.js')}}"></script>
+        <script src="{{asset('assets/js/subscribe-custom.js')}}"></script>
+        <script src="{{asset('assets/js/contact-form-script.js')}}"></script>
         <script src="{{asset('assets/js/custom.js')}}"></script>
         <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')}}"></script>
 

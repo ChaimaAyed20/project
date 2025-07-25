@@ -96,7 +96,7 @@
                                     <div class="conference-item">
                                         <div class="conference-icon">
                                             <div class="conference-icon">
-    <img src="{{ asset('storage/' . $icon) }}" alt="{{ $iconTitle }}" style="width: 40px; height: 40px;">
+   <!-- <img src="{{ asset('storage/' . $icon) }}" alt="{{ $iconTitle }}" style="width: 40px; height: 40px;">-->
 </div>
 
                                         </div>
@@ -158,18 +158,6 @@
                     <p>{{ $planningSections->icon3_description }}</p>
                 </div>
             </div>
-
-            <!-- Icon 4 -->
-            <div class="col-lg-4 col-sm-6 col-md-6" data-cue="slideInUp" data-duration="1000">
-                <div class="single-conference-card">
-                    <div class="planning-icon">
-                        <i class="{{ $planningSections->icon4 }}"></i>
-                    </div>
-                    <h3>{{ $planningSections->icon4_title }}</h3>
-                    <p>{{ $planningSections->icon4_description }}</p>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
@@ -318,10 +306,10 @@
                         <p>{{ $comment->content }}</p>
                         <div class="testimonials-cliend">
                             <a href="#">
-                                <img src="{{ asset('assets/images/default-user.png') }}" alt="user">
+                                <img src="{{ asset('assets\images\testimonials\testimonials-5.jpg') }}" alt="user">
                             </a>
                             <h3>{{ $comment->user->name ?? 'مستخدم مجهول' }}</h3>
-                            <p>زائر</p>
+                            <!--<p>زائر</p>-->
                         </div>
                         <div class="testimonials-icon">
                             <img src="{{ asset('assets/images/testimonials/testimonials-shape.svg') }}" alt="shape">

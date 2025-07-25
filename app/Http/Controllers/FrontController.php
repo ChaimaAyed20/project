@@ -12,6 +12,8 @@ use App\Models\Coordonnee;
 use App\Models\HomeSection;
 use Illuminate\Http\Request;
 use App\Models\ArchiveCategory;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class FrontController extends Controller
@@ -24,7 +26,8 @@ class FrontController extends Controller
                         ->take(3)
                         ->get();
         $comments = Comment::with('user')
-                        ->orderBy('created_at', 'desc')
+                        ->latest()
+                        ->take(4)
                         ->get();
         $conferenceArea = HomeSection::orderBy('id')->skip(0)->take(1)->first();
         $planningSections = HomeSection::orderBy('id')->skip(1)->take(1)->first();      
@@ -82,6 +85,22 @@ class FrontController extends Controller
         $event = Event::findOrFail($eventId);
         return view('frontend.eventDetails', compact('event'));
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'content' => 'required|string',
+            'topic_id' => 'required|exists:news,id',
+        ]);
+
+        $comment = new Comment();
+        $comment->content = $request->content;
+        $comment->topic_id = $request->topic_id;
+        $comment->user_id = Auth::id(); // Assure-toi que l'utilisateur est connecté
+
+        $comment->save();
+
+        return redirect()->back()->with('success', 'تم نشر تعليقك بنجاح');
+    }
     public function news(){
         $newsItems = News::with('author')->orderBy('publication', 'desc')->get();
         $recentNews = News::orderBy('publication', 'desc')->take(2)->get();
@@ -96,8 +115,14 @@ class FrontController extends Controller
         $comments = Comment::with('user') // si tu as une relation user
                         ->latest()
                         ->take(4)
-                        ->get();              
+                        ->get(); 
+             
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
+    }
+    public function resetAutoIncrement()
+    {
+        DB::statement("ALTER TABLE events_category AUTO_INCREMENT = 1");
+        return "Auto-increment reset à 1 !";
     }
     
     public function archivesByCategory($categoryId)
