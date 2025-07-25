@@ -119,6 +119,7 @@ class FrontController extends Controller
              
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
+<<<<<<< HEAD
     public function resetAutoIncrement()
     {
         DB::statement("ALTER TABLE events_category AUTO_INCREMENT = 1");
@@ -153,6 +154,8 @@ class FrontController extends Controller
         // Vue dynamique basée sur le slug (ex: frontend.history, frontend.geography, etc.)
         return view("frontend.$categoryId", compact('archives', 'categoryId', 'category'));
     }
+=======
+>>>>>>> 863bf55eb796c5ecb421e6699cc081f07430b5a1
 
 
 

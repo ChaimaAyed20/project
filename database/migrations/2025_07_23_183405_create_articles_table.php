@@ -9,22 +9,23 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('archives', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('designation_ar');
-            $table->text('description_ar');
-            $table->foreignId('category_id')->constrained('archive_categories')->onDelete('cascade');
+            $table->string('title');
+            $table->text('content');
+            $table->string('image')->nullable(); // optional image field
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('archives');
+        Schema::dropIfExists('articles');
     }
 };
