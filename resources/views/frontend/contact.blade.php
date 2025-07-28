@@ -34,56 +34,44 @@
                                 <h2>لا تتردد في التواصل معنا والوصول إلينا!</h2>
                                 <p>تواصل معنا الآن، فنحن هنا للرد على جميع استفساراتك وتقديم الدعم الذي تحتاجه في أسرع وقت ممكن. سواء كان لديك سؤال، اقتراح، أو تحتاج إلى مساعدة، لا تتردد في مراسلتنا.</p>
                             </div>
-                            <form id="contactForm"> 
+                            <form id="contactForm" method="POST" action="{{ route('contact') }}">
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
-                                            <input type="text" id="name" class="form-control" placeholder="الاسم" required="" data-error="Please enter your name">
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="الاسم" required data-error="يرجى إدخال الاسم">
                                             <div class="help-block with-errors"></div> 
                                         </div>
                                     </div>
-        
+
                                     <div class="col-lg-6 col-md-6">  
                                         <div class="form-group">
-                                            <input type="email" id="email" placeholder="البريد الالكترروني" required="" data-error="Please enter your email" class="form-control">
+                                            <input type="email" name="email" id="email" placeholder="البريد الالكترروني" required data-error="يرجى إدخال البريد الإلكتروني" class="form-control">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div> 
-                    
+
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <input type="subject" id="subject" class="form-control" placeholder="الموضوع" required="" data-error="Please enter your subject">
+                                            <input type="text" name="subject" id="subject" class="form-control" placeholder="الموضوع" required data-error="يرجى إدخال الموضوع">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="form-group"> 
-                                            <textarea name="message" class="form-control" id="message" cols="5" rows="5" placeholder="أكتب تعليقك" required="" data-error="Write your message"></textarea>
+                                            <textarea name="message" class="form-control" id="message" cols="5" rows="5" placeholder="أكتب تعليقك" required data-error="يرجى كتابة الرسالة"></textarea>
                                             <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                                <input name="gridCheck" value="I agree to the terms and privacy policy." class="form-check-input" type="checkbox" id="gridCheck" required="">
-                                                <label class="form-check-label" for="gridCheck">
-                                                    I Agree To The <a href="terms-conditions.html">Terms & Conditions</a> And <a href="privacy-policy.html">Privacy Policy</a>
-                                                </label> 
-                                                <div class="help-block with-errors gridCheck-error"></div>
-                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12 col-md-12">
                                         <button type="submit" class="default-btn">    
-                                            أرسل رسالتك<i class="bx bx-plus"></i>
+                                            أرسل رسالتك <i class="bx bx-plus"></i>
                                         </button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
-
                                 </div> 
                             </form>
                         </div>

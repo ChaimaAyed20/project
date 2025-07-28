@@ -262,7 +262,7 @@ function activeClass($pattern) {
                                 </div> -->
 
                                <div class="option-item">
-                                    <a href="{{route('schedules')}}" class="default-btn">فلسطين بعيون تونسية <i class='bx bx-plus'></i></a> 
+                                    <a href="{{route('celebrities')}}" class="default-btn">فلسطين بعيون تونسية <i class='bx bx-plus'></i></a> 
                                 </div>
                             </div>
                         </div>

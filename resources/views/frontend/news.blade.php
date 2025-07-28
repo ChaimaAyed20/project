@@ -33,146 +33,6 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="single-blog-post-content">
-                            <!--<div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="blog-post-card">
-                                        <div class="blog-post-img">
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <img src="assets/images/blog/blog-page-img-1.jpg" alt="images">
-                                            </a>
-                                        </div>
-                                        <div class="blog-post-text">
-                                            <ul>
-                                                <li><span>Business</span></li>
-                                                <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
-                                                <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
-                                                </li>
-                                            </ul>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <h3>This Entrepreneur Is Bringing Online
-                                                Personal Market Experience</h3>
-                                            </a>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="blog-post-card">
-                                        <div class="blog-post-img">
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <img src="assets/images/blog/blog-page-img-2.jpg" alt="images">
-                                            </a>
-                                        </div>
-                                        <div class="blog-post-text">
-                                            <ul>
-                                                <li><span>Development</span></li>
-                                                <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
-                                                <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
-                                                </li>
-                                            </ul>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <h3>Hiring Your Startup’s First Customer
-                                                    Success Lead</h3>
-                                            </a>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="blog-post-card">
-                                        <div class="blog-post-img">
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <img src="assets/images/blog/blog-page-img-3.jpg" alt="images">
-                                            </a>
-                                        </div>
-                                        <div class="blog-post-text">
-                                            <ul>
-                                                <li><span>Conference</span></li>
-                                                <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
-                                                <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
-                                                </li>
-                                            </ul>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <h3>The Planner Was Met To Oversee
-                                                    The Opening Ceremony</h3>
-                                            </a>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="blog-post-card">
-                                        <div class="blog-post-img">
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <img src="assets/images/blog/blog-page-img-4.jpg" alt="images">
-                                            </a>
-                                        </div>
-                                        <div class="blog-post-text">
-                                            <ul>
-                                                <li><span>Lifestyle</span></li>
-                                                <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
-                                                <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
-                                                </li>
-                                            </ul>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <h3>Increase Competitive Advantage
-                                                    By Aligning</h3>
-                                            </a>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="blog-post-card">
-                                        <div class="blog-post-img">
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <img src="assets/images/blog/blog-page-img-5.jpg" alt="images">
-                                            </a>
-                                        </div>
-                                        <div class="blog-post-text">
-                                            <ul>
-                                                <li><span>Technology</span></li>
-                                                <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
-                                                <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
-                                                </li>
-                                            </ul>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <h3>Every Profitable Marketing Strategy
-                                                    Requires High-Quality Content</h3>
-                                            </a>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="blog-post-card">
-                                        <div class="blog-post-img">
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <img src="assets/images/blog/blog-page-img-6.jpg" alt="images">
-                                            </a>
-                                        </div>
-                                        <div class="blog-post-text">
-                                            <ul>
-                                                <li><span>Traveling</span></li>
-                                                <li><img src="assets/images/blog/blog-icon-1.svg" alt="images">03-June-24</li>
-                                                <li>
-                                                    <img src="assets/images/blog/blog-icon-2.svg" alt="images">By <a href="{{route('newsDetails' , ['newsId' => 1])}}">Admin</a>
-                                                </li>
-                                            </ul>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}">
-                                                <h3>A Verbal History Of AIM The
-                                                    Away Message</h3>
-                                            </a>
-                                            <a href="{{route('newsDetails' , ['newsId' => 1])}}" class="default-btn btn-style-one">المزيد<i class="bx bx-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->
                             <div class="row">
     @foreach($newsItems as $news)
     <div class="col-lg-6 col-md-6">
@@ -184,14 +44,18 @@
             </div>
             <div class="blog-post-text">
                 <ul>
-                    <li><span>خبر</span></li>
+                    <li>
+                        <span>
+                            @if($news->categories->isNotEmpty())
+                                {{ $news->categories->first()->designation_ar }}
+                            @else
+                                تصنيف غير متوفر
+                            @endif
+                        </span>
+                    </li>
                     <li>
                         <img src="{{ asset('assets/images/blog/blog-icon-1.svg') }}" alt="date icon">
                         {{ $news->publication ? \Carbon\Carbon::parse($news->publication)->format('d-M-y') : 'تاريخ غير متوفر' }}
-                    </li>
-                    <li>
-                        <img src="{{ asset('assets/images/blog/blog-icon-2.svg') }}" alt="author icon">
-                        بواسطة <a href="#">{{ $news->author->name ?? 'Admin' }}</a>
                     </li>
                 </ul>
                 <a href="{{ route('newsDetails', ['newsId' => $news->id]) }}">
@@ -217,32 +81,38 @@
                     <div class="col-lg-4">
                         <div class="blog-post-right-bar">
                             <div class="blog-post-search">
-                                <form class="search-form">
-                                    <input type="text" class="form-control" placeholder="ابحث هنا">
+                                <form class="search-form" method="GET" action="{{ route('news') }}">
+                                    <input type="text" name="query" class="form-control" placeholder="ابحث هنا" value="{{ request('query') }}">
                                     <button type="submit" class="default-btn">
                                         <i class='bx bx-search'></i>
                                     </button>
                                 </form>
+                                @if($newsItems->isEmpty())
+                                    <div class="col-12">
+                                        <p class="text-center">لا توجد نتائج مطابقة للبحث.</p>
+                                     </div>
+                                @endif
+
                             </div>
                             <div class="recent-posts-card">
-    <h2>المنشورات الأكثر شيوعًا</h2>
+                                <h2>اخر المنشورات</h2>
 
-    @foreach($recentNews as $recent)
-    <div class="recent-posts-item">
-        <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
-            <div class="popular-post-img">
-                <img src="{{ asset('storage/' . $recent->cover) }}" alt="{{ $recent->designation_ar }}" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </a>
-        <div class="recent-text">
-            <p>{{ \Carbon\Carbon::parse($recent->publication)->format('d-M-y') }}</p>
-            <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
-                <h3>{{ \Illuminate\Support\Str::limit($recent->designation_ar, 50) }}</h3>
-            </a>
-        </div>
-    </div>
-    @endforeach
-</div>
+                                @foreach($recentNews as $recent)
+                                <div class="recent-posts-item">
+                                    <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
+                                        <div class="popular-post-img">
+                                            <img src="{{ asset('storage/' . $recent->cover) }}" alt="{{ $recent->designation_ar }}" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                    </a>
+                                    <div class="recent-text">
+                                        <p>{{ \Carbon\Carbon::parse($recent->publication)->format('d-M-y') }}</p>
+                                        <a href="{{ route('newsDetails', ['newsId' => $recent->id]) }}">
+                                            <h3>{{ \Illuminate\Support\Str::limit($recent->designation_ar, 50) }}</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                                 @endforeach
+                            </div>
 
                             <div class="blog-post-category">
                                <h2>التصنيفات</h2>

@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Contact;
 
 
 class FrontController extends Controller
@@ -61,12 +64,32 @@ class FrontController extends Controller
     }
     public function contact()
     {
-        $coordonnees = Coordonnee::first(); 
+        $coordonnees = Coordonnee::first();
         return view('frontend.contact', compact('coordonnees'));
     }
-    public function schedules(){
-        return view('frontend.schedules');
+    public function celebrities(Request $request)
+    {
+        $query = $request->input('query');
+
+        $newsTunisia = News::with('categories')
+            ->whereHas('categories', fn($q) => $q->where('designation_ar', 'تونس'))
+            ->when($query, fn($q) => $q->where(function ($sub) use ($query) {
+                $sub->where('designation_ar', 'LIKE', "%{$query}%")
+                    ->orWhere('description_ar', 'LIKE', "%{$query}%");
+            }))
+            ->orderBy('publication', 'desc')
+            ->paginate(6);
+
+        $recentNews = News::with('categories')
+                ->whereHas('categories', function ($query) {
+                    $query->where('designation_ar', 'تونس');
+                })
+                ->orderBy('publication', 'desc')
+                ->take(3)
+                ->get();
+        return view('frontend.celebrities', compact('newsTunisia', 'recentNews'));
     }
+
     public function events(){
         $events = Event::with('categories')->get();
         $comments = Comment::with('user') // si tu as une relation user
@@ -75,37 +98,80 @@ class FrontController extends Controller
                         ->get();
         return view('frontend.event', compact('events', 'comments'));
     }
+
     public function eventsByCategory($categoryId) {
         $events = Event::whereHas('categories', function ($query) use ($categoryId) {
         $query->where('events_category.id', $categoryId);
     })->get();
     return view('frontend.event', compact('events', 'categoryId'));
     }
+
     public function eventDetails( $eventId){
         $event = Event::findOrFail($eventId);
         return view('frontend.eventDetails', compact('event'));
     }
+
     public function store(Request $request)
     {
         $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
             'content' => 'required|string',
             'topic_id' => 'required|exists:news,id',
         ]);
 
-        $comment = new Comment();
-        $comment->content = $request->content;
-        $comment->topic_id = $request->topic_id;
-        $comment->user_id = Auth::id(); // Assure-toi que l'utilisateur est connecté
+        // 1. Vérifier si l'utilisateur est connecté
+        if (Auth::check()) {
+            $user = Auth::user();
+        } else {
+            // 2. Chercher un utilisateur avec cet email
+            $user = User::where('email', $request->email)->first();
 
-        $comment->save();
+            // 3. S'il n'existe pas, on le crée
+            if (!$user) {
+                $user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make('default123'), // Mot de passe temporaire
+                ]);
+            }
+        }
+        Comment::create([
+            'content' => $request->content,
+            'user_id' => $user->id,
+            'topic_id' => $request->topic_id,
+        ]);
 
-        return redirect()->back()->with('success', 'تم نشر تعليقك بنجاح');
+        return back()->with('success', 'تم إضافة التعليق بنجاح.');
     }
-    public function news(){
-        $newsItems = News::with('author')->orderBy('publication', 'desc')->get();
-        $recentNews = News::orderBy('publication', 'desc')->take(2)->get();
+
+    public function news(Request $request)
+    {
+        $query = $request->input('query');
+        // Récupérer les news sauf celles ayant la catégorie "تونس"
+        $newsItems = News::with(['author', 'categories']) // on ajoute categories ici
+            ->whereDoesntHave('categories', function ($q) {
+                $q->where('designation_ar', 'تونس');
+            })
+            ->when($query, function ($q) use ($query) {
+                $q->where(function ($subQuery) use ($query) {
+                    $subQuery->where('designation_ar', 'LIKE', "%{$query}%")
+                            ->orWhere('description_ar', 'LIKE', "%{$query}%");
+                });
+            })
+            ->orderBy('publication', 'desc')
+            ->paginate(6);
+        $recentNews = News::with('categories')
+            ->whereDoesntHave('categories', function ($q) {
+                $q->where('designation_ar', 'تونس');
+            })
+            ->orderBy('publication', 'desc')
+            ->take(2)
+            ->get();
+
         return view('frontend.news', compact('newsItems', 'recentNews'));
     }
+
     public function newsDetails( $newsId){
         $news = News::with('author')->findOrFail($newsId);
         $recentNews = News::where('id', '!=', $newsId)
@@ -119,6 +185,7 @@ class FrontController extends Controller
              
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
+
     public function resetAutoIncrement()
     {
         DB::statement("ALTER TABLE events_category AUTO_INCREMENT = 1");
@@ -151,6 +218,27 @@ class FrontController extends Controller
         // Vue dynamique basée sur le slug (ex: frontend.history, frontend.geography, etc.)
         return view("frontend.$categoryId", compact('articles', 'categoryId', 'category'));
     }
+
+    #public function contact(Request $request)
+    #{
+    /*   $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        Contact::create([
+            'designation_ar' => $request->name,
+            'email'          => $request->email,
+            'subject'        => $request->subject,
+            'message'        => $request->message,
+        ]);
+
+        return redirect()->back()->with('success', 'تم إرسال رسالتك بنجاح، سنرد عليك قريباً.');
+    }*/
+
+
 
 
 
