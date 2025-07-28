@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/',[FrontController::class, 'index'])->name('home');
-Route::get('/archive/{categoryId}', [FrontController::class, 'archivesByCategory'])->name('archivesByCategory');
+Route::get('/article/{categoryId}', [FrontController::class, 'articlesByCategory'])->name('articlesByCategory');
 Route::get('galleries', [FrontController::class, 'galleries'])->name('galleries');
 Route::get('topics', [FrontController::class, 'topics'])->name('topics');
 Route::get('contact', [FrontController::class, 'contact'])->name('contact');

@@ -27,6 +27,7 @@ function activeClass($pattern) {
         <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}"> 
         <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}"> 
         <link rel="stylesheet" href="{{asset('assets/css/rtl.css')}}"> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css" />
 
         <!--=== Title & Favicon ===-->
         <title>Nestu - Event Conference & Reunion HTML Template</title>
@@ -162,25 +163,25 @@ function activeClass($pattern) {
                                             </a>   
                                             <ul class="dropdown-menu">
                                                 <li class="nav-item">
-                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'history']) }}" class="nav-link bg-border-top">تاريخ</a>     
+                                                    <a href="{{ route('articlesByCategory', ['categoryId' => 'history']) }}" class="nav-link bg-border-top">تاريخ</a>     
                                                 </li>
                                                <li class="nav-item">
-                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'geography']) }}" class="nav-link">جغرافيا</a>     
+                                                    <a href="{{ route('articlesByCategory', ['categoryId' => 'geography']) }}" class="nav-link">جغرافيا</a>     
                                                 </li>
                                                 <li class="nav-item"> 
-                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'quran']) }}" class="nav-link">فلسطين في القرآن</a>      
+                                                    <a href="{{ route('articlesByCategory', ['categoryId' => 'quran']) }}" class="nav-link">فلسطين في القرآن</a>      
                                                 </li>
                                                 <li class="nav-item"> 
-                                                    <a href="{{ route('archivesByCategory', ['categoryId' => 'sunnah']) }}" class="nav-link">فلسطين في السّنة</a>      
+                                                    <a href="{{ route('articlesByCategory', ['categoryId' => 'sunnah']) }}" class="nav-link">فلسطين في السّنة</a>      
                                                 </li>
                                             </ul>
         
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('archivesByCategory', ['categoryId' => 'digitalLibrary']) }}" class="nav-link">مكتبة رقمية</a>     
+                                            <a href="{{ route('articlesByCategory', ['categoryId' => 'digitalLibrary']) }}" class="nav-link">مكتبة رقمية</a>     
                                         </li> 
                                         <li class="nav-item">
-                                            <a href="{{ route('archivesByCategory', ['categoryId' => 'references']) }}" class="nav-link bg-border-2">مراجع</a>     
+                                            <a href="{{ route('articlesByCategory', ['categoryId' => 'references']) }}" class="nav-link bg-border-2">مراجع</a>     
                                         </li> 
                                     </ul>
 
@@ -443,6 +444,7 @@ function activeClass($pattern) {
         <script src="{{asset('assets/js/contact-form-script.js')}}"></script>
         <script src="{{asset('assets/js/custom.js')}}"></script>
         <script src="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
 
 
     </body>

@@ -39,35 +39,11 @@
                 <div class="some-faqs-area pt-100 pb-100">
                     <div class="single-faqs-content">
                         <div class="accordion" id="accordionEvent">
-                            @forelse ($archives as $archive)
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading{{ $archive->id }}">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#collapse{{ $archive->id }}"
-                                            aria-expanded="false"
-                                            aria-controls="collapse{{ $archive->id }}">
-                                            {{ $archive->designation_ar }}
-                                        </button>
-                                    </h2>
-                                    <div id="collapse{{ $archive->id }}" class="accordion-collapse collapse"
-                                        aria-labelledby="heading{{ $archive->id }}" data-bs-parent="#accordionEvent">
-                                        <div class="accordion-body">
-                                            {!! nl2br(e($archive->description_ar)) !!}
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <p class="text-center">لا توجد أرشيفات في هذه الفئة.</p>
-                            @endforelse
+                            
                         </div>
                     </div>
 
-                    @if($archives->count() > 5)
-                    <div class="blog-post-btn mt-4 text-center">
-                        <a href="#" class="default-btn">تحميل المزيد <i class="bx bx-plus"></i></a>
-                    </div>
-                    @endif
+                    
                 </div>
             </div>
 

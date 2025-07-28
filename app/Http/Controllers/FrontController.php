@@ -11,7 +11,7 @@ use App\Models\HomeInfo;
 use App\Models\Coordonnee;
 use App\Models\HomeSection;
 use Illuminate\Http\Request;
-use App\Models\ArchiveCategory;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -119,22 +119,19 @@ class FrontController extends Controller
              
         return view('frontend.newsDetails' , compact('news', 'recentNews', 'comments') );
     }
-<<<<<<< HEAD
     public function resetAutoIncrement()
     {
         DB::statement("ALTER TABLE events_category AUTO_INCREMENT = 1");
         return "Auto-increment reset à 1 !";
     }
     
-    public function archivesByCategory($categoryId)
+    public function articlesByCategory($categoryId)
     {
         $categories = [
             'history' => 'تاريخ',
             'geography' => 'جغرافيا',
             'quran' => 'فلسطين في القرآن',
             'sunnah' => 'فلسطين في السّنة',
-            'digitalLibrary' => 'مكتبة رقمية',
-            'references' => 'مراجع'
         ];
 
         if (!array_key_exists($categoryId, $categories)) {
@@ -142,20 +139,18 @@ class FrontController extends Controller
         }
 
         // Chercher la catégorie par son nom arabe
-        $category = ArchiveCategory::where('designation_ar', $categories[$categoryId])->first();
+        $category = Category::where('name_ar', $categories[$categoryId])->first();
 
         if (!$category) {
             abort(404); // Si la catégorie n’existe pas en base
         }
 
         // Récupérer les archives associées
-        $archives = $category->archives()->latest()->get();
+        $articles = $category->articles()->latest()->get();
 
         // Vue dynamique basée sur le slug (ex: frontend.history, frontend.geography, etc.)
-        return view("frontend.$categoryId", compact('archives', 'categoryId', 'category'));
+        return view("frontend.$categoryId", compact('articles', 'categoryId', 'category'));
     }
-=======
->>>>>>> 863bf55eb796c5ecb421e6699cc081f07430b5a1
 
 
 
