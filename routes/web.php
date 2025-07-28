@@ -9,8 +9,10 @@ Route::get('/', function () {
 Route::get('/',[FrontController::class, 'index'])->name('home');
 Route::get('/archive/{categoryId}', [FrontController::class, 'archivesByCategory'])->name('archivesByCategory');
 Route::get('galleries', [FrontController::class, 'galleries'])->name('galleries');
+Route::post('/galleries/store', [FrontController::class, 'storeAlbum'])->name('galleries.store');
 Route::get('topics', [FrontController::class, 'topics'])->name('topics');
 Route::get('contact', [FrontController::class, 'contact'])->name('contact');
+Route::post('contact', [FrontController::class, 'storeContact'])->name('contact.store');
 Route::get('celebrities', [FrontController::class, 'celebrities'])->name('celebrities');
 Route::get('/events', [FrontController::class, 'events'])->name('events');
 Route::get('/events/{categoryId}', [FrontController::class, 'eventsByCategory'])->name('eventsByCategory');

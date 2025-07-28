@@ -53,7 +53,27 @@ class FrontController extends Controller
         }
     }
 
-    
+    public function storeAlbum(Request $request)
+    {
+        $request->validate([
+            'designation_ar' => 'required|string|max:255',
+            'description'    => 'nullable|string',
+            'cover'          => 'nullable|string',
+            'images'         => 'nullable|array',
+            'publication'    => 'nullable|date',
+        ]);
+
+        Album::create([
+            'designation_ar' => $request->designation_ar,
+            'description'    => $request->description,
+            'cover'          => $request->cover,
+            'images'         => $request->images, // cast = array to json
+            'publication'    => $request->publication,
+        ]);
+
+        return redirect()->route('galleries')->with('success', 'Album ajouté avec succès');
+    }
+
     public function galleries(){
 
         $galleries = Album::all();
@@ -221,9 +241,9 @@ class FrontController extends Controller
         return view("frontend.$categoryId", compact('archives', 'categoryId', 'category'));
     }
 
-    #public function contact(Request $request)
-    #{
-    /*   $request->validate([
+    public function storeContact(Request $request)
+    {
+       $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|email|max:255',
             'subject' => 'required|string|max:255',
@@ -238,7 +258,7 @@ class FrontController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'تم إرسال رسالتك بنجاح، سنرد عليك قريباً.');
-    }*/
+    }
 
 
 
