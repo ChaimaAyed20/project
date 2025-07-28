@@ -11,7 +11,7 @@ Route::get('/archive/{categoryId}', [FrontController::class, 'archivesByCategory
 Route::get('galleries', [FrontController::class, 'galleries'])->name('galleries');
 Route::get('topics', [FrontController::class, 'topics'])->name('topics');
 Route::get('contact', [FrontController::class, 'contact'])->name('contact');
-Route::get('schedules', [FrontController::class, 'schedules'])->name('schedules');
+Route::get('celebrities', [FrontController::class, 'celebrities'])->name('celebrities');
 Route::get('/events', [FrontController::class, 'events'])->name('events');
 Route::get('/events/{categoryId}', [FrontController::class, 'eventsByCategory'])->name('eventsByCategory');
 Route::get('/event/{eventId}', [FrontController::class, 'eventDetails'])->name('eventDetails');
