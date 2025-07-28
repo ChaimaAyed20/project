@@ -32,7 +32,7 @@
         <div class="row">
             @foreach ($galleries as $gallery)
                 @php
-                    $images = json_decode($gallery->images, true);
+                    $images = $gallery->images;                
                 @endphp
 
                 @if(is_array($images))

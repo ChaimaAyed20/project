@@ -34,7 +34,7 @@
                                 <h2>لا تتردد في التواصل معنا والوصول إلينا!</h2>
                                 <p>تواصل معنا الآن، فنحن هنا للرد على جميع استفساراتك وتقديم الدعم الذي تحتاجه في أسرع وقت ممكن. سواء كان لديك سؤال، اقتراح، أو تحتاج إلى مساعدة، لا تتردد في مراسلتنا.</p>
                             </div>
-                            <form id="contactForm" method="POST" action="{{ route('contact') }}">
+                            <form id="contactForm" method="POST" action="{{ route('contact.store') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
