@@ -39,29 +39,50 @@
                 <div class="some-faqs-area pt-100 pb-100">
                     <div class="single-faqs-content">
                         <div class="accordion" id="accordionEvent">
-                            @forelse ($archives as $archive)
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading{{ $archive->id }}">
-                                        <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button" 
-                                                data-bs-toggle="collapse" 
-                                                data-bs-target="#collapse{{ $archive->id }}" 
-                                                aria-expanded="{{ $loop->first ? 'true' : 'false' }}" 
-                                                aria-controls="collapse{{ $archive->id }}">
-                                            {{ $archive->designation_ar }}
-                                        </button>
-                                    </h2>
-                                    <div id="collapse{{ $archive->id }}" 
-                                         class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" 
-                                         aria-labelledby="heading{{ $archive->id }}" 
-                                         data-bs-parent="#accordionEvent">
-                                        <div class="accordion-body">
-                                            {!! nl2br(e($archive->description_ar)) !!}
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <p class="text-center">لا توجد بيانات لعرضها.</p>
-                            @endforelse
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>الصورة</th>
+                                            <th>العنوان بالعربية</th>
+                                            <th>Titre (FR)</th>
+                                            <th>المؤلف</th>
+                                            <th>DOI</th>
+                                            <th>تاريخ النشر</th>
+                                            <th>رابط خارجي</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse($articles as $article)
+                                            <tr>
+                                                <td>
+                                                    @if($article->cover)
+                                                        <img src="{{ asset('storage/' . $article->cover) }}" alt="cover" style="width: 60px; height: 60px; object-fit: cover;">
+                                                    @else
+                                                        <span class="text-muted">لا يوجد</span>
+                                                    @endif
+                                                </td>
+                                                <td>{{ $article->designation_ar }}</td>
+                                                <td>{{ $article->designation_fr }}</td>
+                                                <td>{{ $article->author }}</td>
+                                                <td>{{ $article->DOI ?? '-' }}</td>
+                                                <td>{{ $article->date_de_publication?->format('d/m/Y') }}</td>
+                                                <td>
+                                                    @if($article->link)
+                                                        <a href="{{ $article->link }}" class="text-primary" target="_blank">عرض</a>
+                                                    @else
+                                                        <span class="text-muted">-</span>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="7" class="text-muted">لا توجد مقالات متاحة حالياً.</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>                        
                     </div>
                 </div>
@@ -97,30 +118,6 @@
                         <!-- Ajoute les autres posts -->
                     </div>
 
-                    <!-- التصنيفات -->
-                    <div class="blog-post-category">
-                        <h2>التصنيفات</h2>
-                        <ul dir="rtl" style="list-style-type: circle;">
-                            <li><a href="#">التاريخ الفلسطيني</a></li>
-                            <li><a href="#">النكبة والنكسة</a></li>
-                            <li><a href="#">المقاومة والثورات</a></li>
-                            <li><a href="#">القدس والمسجد الأقصى</a></li>
-                            <li><a href="#">الشخصيات الفلسطينية</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- الوسوم -->
-                    <div class="popular-tags">
-                        <h2>مفاتيح البحث</h2>
-                        <ul>
-                            <li><a href="#">النكبة</a></li>
-                            <li><a href="#">فلسطين</a></li>
-                            <li><a href="#">القدس</a></li>
-                            <li><a href="#">غزة</a></li>
-                            <li><a href="#">المقاومة</a></li>
-                            <li><a href="#">اللاجئين</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div> <!-- END ROW -->
